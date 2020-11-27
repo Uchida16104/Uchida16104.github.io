@@ -68,8 +68,6 @@ body { background-image: url(background001.jpg);}
 <br>
 <button onclick="unusuallyshapedtreetrunkforestandcolorfulzebra()"> Unusually shaped tree trunk forest and coloful zebra </button>
 <button onclick="waveandlaser()"> Wave and laser </button>
-<br>
-<button onclick="modulationwithp5js()"> Modulation with p5.js </button>
 <button onclick="bulge()"> Bulge </button>
 <br>
 <button onclick="movingcoloredglassthatreflectspolkadotsandpuddles()"> Moving colored glass that reflects polka dots and puddles </button>
@@ -240,20 +238,6 @@ osc(10,1/4).layer(shape([3,7].smooth(),[0,1].smooth(),[0,1].reverse().smooth()).
 
 function waveandlaser() {
 shape(4,[0,1].smooth(),[0,1].reverse().smooth()).scale(1).repeat([1,4].smooth().fast(1/4),[1,4].smooth()).modulateScrollY(osc(1).scroll(()=>Math.sin(time/-2),()=>Math.cos(time/-2))).modulateScrollY(osc(2).scroll(()=>Math.cos(time/-1),()=>Math.sin(time/-1))).modulateScrollY(osc(3).scroll(()=>Math.sin(time),()=>Math.cos(time))).modulateScrollY(osc(2).scroll(()=>Math.cos(time*2),()=>Math.sin(time*2))).scale([1/8,1/2].smooth()).scale(()=>(time/10)).scroll(()=>Math.sin(time/2),()=>Math.cos(time/2)).diff(osc(10,1/4)).diff(osc(10,1/4).rotate(1.57)).mult(osc(10,1/8,300).diff(gradient(1)).diff(solid([0,1].smooth().fast(1/8),[0,1].smooth().fast(1/4),[0,1].smooth().fast(1/2),[0,1].smooth())).hue(()=>Math.sin(time),()=>Math.cos(time),()=>Math.tan(time)).saturate([0,10].smooth()).brightness([0,1].smooth()).contrast([1,2].smooth()).scale(0.1).scale(1.5)).invert().out();
-      }
-
-function modulationwithp5js() {
-p1 = new P5({mode:'WEBGL'});
-p1.rotate(p1.frameCount);
-p1.torus(100,100);
-//p1.clear();
-p1.hide();
-s0.init({src: p1.canvas});
-solid([0,1].reverse().smooth(),[0,1].reverse().smooth().fast(1/2),[0,1].reverse().smooth().fast(1/4),[0,1].reverse().smooth().fast(1/8)).add(o2,[0,1]).add(o3,[1,0]).layer(src(o0).mask(osc(10,1/8).diff(osc(10,1/8).rotate(1.57)).thresh(0.5).kaleid([3,7].smooth())).scale(0.99)).layer(src(o1).invert().luma().invert()).mask(shape([3,7].smooth(),[0,1].smooth(),[0,1].reverse().smooth())).out();
-src(s0).scale(()=>Math.tan(time)).rotate(()=>Math.sin(time)).rotate(()=>Math.cos(time)).rotate(1,1).modulateScrollY(osc(1).scroll(()=>Math.sin(time),()=>Math.cos(time))).modulateScrollY(osc(2).scroll(()=>Math.cos(time/2),()=>Math.sin(time/2))).mult(osc(10,0.5,300).diff(gradient(1)).diff(solid([0,1].smooth().fast(1/8),[0,1].smooth().fast(1/4),[0,1].smooth().fast(1/2),[0,1].smooth())).hue(()=>Math.sin(time),()=>Math.cos(time),()=>Math.tan(time)).saturate([0,10].smooth()).brightness([0,1].smooth()).contrast([1,2].smooth())).blend(o1,[0,1].smooth()).add(o1,[0,1].smooth().fast(1/10)).out(o1);
-noise(1).thresh().repeat([1,4].smooth(),[1,4].smooth()).scale(()=>Math.tan(time/10)).modulateScrollY(osc(1).scroll(()=>Math.sin(time),()=>Math.cos(time))).modulateScrollY(osc(2).scroll(()=>Math.cos(time*2),()=>Math.sin(time*2))).out(o2);
-voronoi(3,1,2).scale(()=>Math.tan(time/-10)).repeat([1,4].reverse().smooth(),[1,4].reverse().smooth()).modulateScrollY(osc(1).scroll(()=>Math.sin(time),()=>Math.cos(time))).modulateScrollY(osc(2).scroll(()=>Math.cos(time/2),()=>Math.sin(time/2))).out(o3);
-render();
       }
 
 function bulge() {
