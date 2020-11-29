@@ -85,7 +85,7 @@ body { background-image: url(background001.jpg);}
 <br>
 <button onclick="partialrepresentationtheothervideoversion2thatispileduppaintoverrotatedandshrinked()"> Partial representation (the other video version 2 that is piled up paintover, rotated and shrinked) </button>
 <br>
-<button onclick="rotationofproductsproducedfromblackhole()"> Rotation of products produced from black hole </button>
+<button onclick="illusion()"> Illusion </button>
 <br>
     <canvas id="myCanvas" width="360px" height="360px"></canvas>
     <script>
@@ -316,7 +316,7 @@ osc(10,1/8,300).diff(gradient(1)).diff(solid([0,1].reverse().smooth(),[0,1].reve
 shape([3,7].smooth(),[0,1].smooth(),[0,1].reverse().smooth()).modulateScrollY(osc(1).scroll(()=>Math.sin(time*-2),()=>Math.cos(time*-2))).modulateScrollY(osc(2).scroll(()=>Math.cos(time*-1),()=>Math.sin(time*-1))).modulateScrollY(osc(3).scroll(()=>Math.sin(time),()=>Math.cos(time))).modulateScrollY(osc(4).scroll(()=>Math.cos(time/2),()=>Math.sin(time/2))).modulateHue(src(o3).scale(1.01),[0,1].reverse().smooth()).out(o3)
       }
       
-function rotationofproductsproducedfromblackhole() {
+function illusion() {
 noise(1).thresh().mult(osc(10,0.5,300).diff(gradient(1)).diff(solid([0,1].smooth().fast(1/8),[0,1].smooth().fast(1/4),[0,1].smooth().fast(1/2),[0,1].smooth())).invert().kaleid([3,7].smooth()).hue(()=>Math.sin(time),()=>Math.cos(time),()=>Math.tan(time)).saturate([0,10].smooth()).brightness([0,1].smooth()).contrast([1,2].smooth())).modulatePixelate(shape(360,[0,1].smooth(),[0,1].reverse().smooth()).colorama([0,10].smooth()),[1,1000].smooth().fast(4),[1,1000].smooth().fast(4)).layer(voronoi(1,1,2.5).luma().mult(osc(10,0.5,300).diff(gradient(1)).diff(solid([0,1].reverse().smooth(),[0,1].smooth().reverse().fast(1/2),[0,1].reverse().smooth().fast(1/4),[0,1].reverse().smooth().fast(1/8))).hue(()=>Math.sin(time),()=>Math.cos(time),()=>Math.tan(time)).saturate([0,10].smooth()).brightness([0,1].smooth()).contrast([1,2].smooth()))).rotate(()=>Math.sin(time)).rotate(()=>Math.cos(time)).rotate(1,1).scale([0,1].smooth().fast(1/8)).invert([0,1].smooth()).diff(o0,[-1,1].smooth().fast(1/16)).rotate(()=>Math.sin(time)).rotate(-1,-1).out()
       }
     </script>
