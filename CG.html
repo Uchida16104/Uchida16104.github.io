@@ -72,6 +72,20 @@ body { background-image: url(background001.jpg);}
 <br>
 <button onclick="movingcoloredglassthatreflectspolkadotsandpuddles()"> Moving colored glass that reflects polka dots and puddles </button>
 <br>
+<button onclick="transparent()"> Transparent </button>
+<br>
+<button onclick="partialrepresentation()"> Partial representation </button>
+<br>
+<button onclick="partialrepresentationvideoversionthatispileduppaintoverandshrinked()"> Partial representation (video version that is piled up paintover and shrinked) </button>
+<br>
+<button onclick="partialrepresentationvideoversionthatispileduppaintoverrotatedandshrinked()"> Partial representation (video version that is piled up paintover, rotated and shrinked) </button>
+<br>
+<button onclick="partialrepresentationanothervideoversionthatispileduppaintoverrotatedandshrinked()"> Partial representation (another video version that is piled up paintover, rotated and shrinked) </button>
+<br>
+<button onclick="partialrepresentationtheothervideoversion1thatispileduppaintoverrotatedandshrinked()"> Partial representation (the other video version 1 that is piled up paintover, rotated and shrinked) </button>
+<br>
+<button onclick="partialrepresentationtheothervideoversion2thatispileduppaintoverrotatedandshrinked()"> Partial representation (the other video version 2 that is piled up paintover, rotated and shrinked) </button>
+<br>
     <canvas id="myCanvas" width="360px" height="360px"></canvas>
     <script>
       // create a new hydra-synth instance
@@ -253,6 +267,52 @@ shape(4,[0,1].smooth(),[0,1].reverse().smooth()).repeat(4,4).rotate([0,1.57].smo
 
 function movingcoloredglassthatreflectspolkadotsandpuddles() {
 solid().blend(shape([3,7].smooth(),[0,1].smooth(),[0,1].reverse().smooth()).scroll(()=>Math.sin(time),()=>(time)).scale(1/2),[0,1].reverse().smooth()).blend(shape([4,5,6,7,3].smooth(),[0,1].reverse().smooth(),[0,1].smooth()).scroll(()=>Math.cos(time),()=>(time)).scale(1/2),[0,1].smooth().fast(1/2)).blend(shape([5,6,7,3,4].smooth(),[0,1].smooth(),[0,1].reverse().smooth()).scroll(()=>(time),()=>Math.sin(time)).scale(1/2),[0,1].reverse().smooth().fast(1/4)).blend(shape([6,7,3,4,5].smooth(),[0,1].reverse().smooth(),[0,1].smooth()).scroll(()=>(time),()=>Math.cos(time)).scale(1/2),[0,1].smooth().fast(1/8)).scale(1/2).diff(osc(10,1/8).layer(osc(10,1/8).rotate(1.57).luma()),[0,1].reverse().smooth()).diff(osc(10,1/4).layer(osc(10,1/4).rotate(1.57).thresh()).rotate(1.57),[0,1].smooth()).modulate(noise(()=>Math.PI).thresh()).layer(voronoi(10,1,2).luma()).mult(osc(10,0.5,300).diff(gradient(1)).diff(solid([0,1].smooth().fast(1/8),[0,1].smooth().fast(1/4),[0,1].smooth().fast(1/2),[0,1].smooth())).hue(()=>Math.sin(time),()=>Math.cos(time),()=>Math.tan(time)).saturate([0,10].smooth()).brightness([0,1].smooth()).contrast([1,2].smooth()).invert(),[0,1].smooth()).out()
+      }
+      
+function transparent() {
+shape(360,[0,1].smooth(),[0,1].reverse().smooth()).repeat(4,4).diff(osc(10,1/8).diff(osc(10,1/8).rotate(1.57))).diff(noise(2).thresh()).diff(voronoi([1,5].smooth().fast(1/5),1,[2,5].smooth().fast(1/5)).repeat(2,2).luma()).out()
+      }
+
+function partialrepresentation() {
+solid().layer(src(o1).luma()).layer(src(o2).thresh().mask(src(o3).luma().colorama([0,10].smooth().fast(1/10)))).modulate(noise(2).thresh()).modulate(voronoi(1)).modulate(voronoi(2)).mult(osc(10,0.5,300).diff(gradient(1)).diff(solid([0,1].smooth().fast(1/8),[0,1].smooth().fast(1/4),[0,1].smooth().fast(1/2),[0,1].smooth())).invert().hue(()=>Math.sin(time),()=>Math.cos(time),()=>Math.tan(time)).saturate([0,10].smooth()).brightness([0,1].smooth()).contrast([1,2].smooth())).out()
+voronoi(5,1,2.5).out(o1)
+osc(10,1/8,300).diff(gradient(1)).diff(solid([0,1].reverse().smooth(),[0,1].reverse().smooth().fast(1/2),[0,1].reverse().smooth().fast(1/4),[0,1].reverse().smooth().fast(1/8))).diff(noise(1)).out(o2)
+shape([3,7].smooth(),[0,1].smooth(),[0,1].reverse().smooth()).modulateScrollY(osc(1).scroll(()=>Math.sin(time*-2),()=>Math.cos(time*-2))).modulateScrollY(osc(2).scroll(()=>Math.cos(time*-1),()=>Math.sin(time*-1))).modulateScrollY(osc(3).scroll(()=>Math.sin(time),()=>Math.cos(time))).modulateScrollY(osc(4).scroll(()=>Math.cos(time/2),()=>Math.sin(time/2))).out(o3)
+      }
+
+function partialrepresentationvideoversionthatispileduppaintoverandshrinked() {
+solid().layer(src(o1).luma()).layer(src(o2).thresh().mask(src(o3).luma().colorama([0,10].smooth().fast(1/10)))).modulate(noise(2).thresh()).modulate(voronoi(1)).modulate(voronoi(2)).mult(osc(10,0.5,300).diff(gradient(1)).diff(solid([0,1].smooth().fast(1/8),[0,1].smooth().fast(1/4),[0,1].smooth().fast(1/2),[0,1].smooth())).invert().hue(()=>Math.sin(time),()=>Math.cos(time),()=>Math.tan(time)).saturate([0,10].smooth()).brightness([0,1].smooth()).contrast([1,2].smooth())).diff(o0,[0,1].smooth()).scale([7/8,1].smooth()).blend(o0,[0,1].reverse().smooth().fast(1/2)).out()
+voronoi(5,1,2.5).modulateRotate(src(o1).rotate(0.99,0.99).scale(1.01),[0,1].reverse().smooth()).out(o1)
+osc(10,1/8,300).diff(gradient(1)).diff(solid([0,1].reverse().smooth(),[0,1].reverse().smooth().fast(1/2),[0,1].reverse().smooth().fast(1/4),[0,1].reverse().smooth().fast(1/8))).diff(noise(1)).modulateScale(src(o2).scale(1.01),[0,2].smooth()).out(o2)
+shape([3,7].smooth(),[0,1].smooth(),[0,1].reverse().smooth()).modulateScrollY(osc(1).scroll(()=>Math.sin(time*-2),()=>Math.cos(time*-2))).modulateScrollY(osc(2).scroll(()=>Math.cos(time*-1),()=>Math.sin(time*-1))).modulateScrollY(osc(3).scroll(()=>Math.sin(time),()=>Math.cos(time))).modulateScrollY(osc(4).scroll(()=>Math.cos(time/2),()=>Math.sin(time/2))).modulateHue(src(o3).scale(1.01),[0,1].reverse().smooth()).out(o3)
+      }
+
+function partialrepresentationvideoversionthatispileduppaintoverrotatedandshrinked() {
+solid().layer(src(o1).luma()).layer(src(o2).thresh().mask(src(o3).luma().colorama([0,10].smooth().fast(1/10)))).modulate(noise(2).thresh()).modulate(voronoi(1)).modulate(voronoi(2)).mult(osc(10,0.5,300).diff(gradient(1)).diff(solid([0,1].smooth().fast(1/8),[0,1].smooth().fast(1/4),[0,1].smooth().fast(1/2),[0,1].smooth())).invert().hue(()=>Math.sin(time),()=>Math.cos(time),()=>Math.tan(time)).saturate([0,10].smooth()).brightness([0,1].smooth()).contrast([1,2].smooth())).diff(o0,[0,1].smooth()).modulateKaleid(src(o0).diff(shape([3,7].reverse().smooth(),[0,1].reverse().smooth(),[0,1].smooth()),[0,1].reverse().smooth()).rotate(0.99,0.99).scale(1.01),[3,7].reverse().smooth()).rotate(()=>(time/5)).scale([7/8,1].smooth()).blend(o0,[0,1].reverse().smooth().fast(1/2)).out()
+voronoi(5,1,2.5).modulateRotate(src(o1).rotate(0.99,0.99).scale(1.01),[0,1].reverse().smooth()).out(o1)
+osc(10,1/8,300).diff(gradient(1)).diff(solid([0,1].reverse().smooth(),[0,1].reverse().smooth().fast(1/2),[0,1].reverse().smooth().fast(1/4),[0,1].reverse().smooth().fast(1/8))).diff(noise(1)).modulateScale(src(o2).scale(1.01),[0,2].smooth()).out(o2)
+shape([3,7].smooth(),[0,1].smooth(),[0,1].reverse().smooth()).modulateScrollY(osc(1).scroll(()=>Math.sin(time*-2),()=>Math.cos(time*-2))).modulateScrollY(osc(2).scroll(()=>Math.cos(time*-1),()=>Math.sin(time*-1))).modulateScrollY(osc(3).scroll(()=>Math.sin(time),()=>Math.cos(time))).modulateScrollY(osc(4).scroll(()=>Math.cos(time/2),()=>Math.sin(time/2))).modulateHue(src(o3).scale(1.01),[0,1].reverse().smooth()).out(o3)
+      }
+
+function partialrepresentationanothervideoversionthatispileduppaintoverrotatedandshrinked() {
+solid().layer(src(o1).luma()).layer(src(o2).thresh().mask(src(o3).luma().colorama([0,10].smooth().fast(1/10)))).modulate(noise(2).thresh()).modulate(voronoi(1)).modulate(voronoi(2)).mult(osc(10,0.5,300).diff(gradient(1)).diff(solid([0,1].smooth().fast(1/8),[0,1].smooth().fast(1/4),[0,1].smooth().fast(1/2),[0,1].smooth())).invert().hue(()=>Math.sin(time),()=>Math.cos(time),()=>Math.tan(time)).saturate([0,10].smooth()).brightness([0,1].smooth()).contrast([1,2].smooth())).diff(o0,[0,1].smooth()).rotate(()=>(time)).scale([7/8,1].smooth()).blend(o0,[0,1].reverse().smooth().fast(1/2)).out()
+voronoi(5,1,2.5).modulateRotate(src(o1).rotate(0.99,0.99).scale(1.01),[0,1].reverse().smooth()).out(o1)
+osc(10,1/8,300).diff(gradient(1)).diff(solid([0,1].reverse().smooth(),[0,1].reverse().smooth().fast(1/2),[0,1].reverse().smooth().fast(1/4),[0,1].reverse().smooth().fast(1/8))).diff(noise(1)).modulateScale(src(o2).scale(1.01),[0,2].smooth()).out(o2)
+shape([3,7].smooth(),[0,1].smooth(),[0,1].reverse().smooth()).modulateScrollY(osc(1).scroll(()=>Math.sin(time*-2),()=>Math.cos(time*-2))).modulateScrollY(osc(2).scroll(()=>Math.cos(time*-1),()=>Math.sin(time*-1))).modulateScrollY(osc(3).scroll(()=>Math.sin(time),()=>Math.cos(time))).modulateScrollY(osc(4).scroll(()=>Math.cos(time/2),()=>Math.sin(time/2))).modulateHue(src(o3).scale(1.01),[0,1].reverse().smooth()).out(o3)
+      }
+
+function partialrepresentationtheothervideoversion1thatispileduppaintoverrotatedandshrinked() {
+solid().layer(src(o1).luma()).layer(src(o2).thresh().mask(src(o3).luma().colorama([0,10].smooth().fast(1/10)))).modulate(noise(2).thresh()).modulate(voronoi(1)).modulate(voronoi(2)).mult(osc(10,0.5,300).diff(gradient(1)).diff(solid([0,1].smooth().fast(1/8),[0,1].smooth().fast(1/4),[0,1].smooth().fast(1/2),[0,1].smooth())).invert().hue(()=>Math.sin(time),()=>Math.cos(time),()=>Math.tan(time)).saturate([0,10].smooth()).brightness([0,1].smooth()).contrast([1,2].smooth())).rotate(()=>(time)).diff(o0,[0,1].smooth()).scale([7/8,1].smooth()).blend(o0,[0,1].reverse().smooth().fast(1/2)).out()
+voronoi(5,1,2.5).modulateRotate(src(o1).rotate(0.99,0.99).scale(1.01),[0,1].reverse().smooth()).out(o1)
+osc(10,1/8,300).diff(gradient(1)).diff(solid([0,1].reverse().smooth(),[0,1].reverse().smooth().fast(1/2),[0,1].reverse().smooth().fast(1/4),[0,1].reverse().smooth().fast(1/8))).diff(noise(1)).modulateScale(src(o2).scale(1.01),[0,2].smooth()).out(o2)
+shape([3,7].smooth(),[0,1].smooth(),[0,1].reverse().smooth()).modulateScrollY(osc(1).scroll(()=>Math.sin(time*-2),()=>Math.cos(time*-2))).modulateScrollY(osc(2).scroll(()=>Math.cos(time*-1),()=>Math.sin(time*-1))).modulateScrollY(osc(3).scroll(()=>Math.sin(time),()=>Math.cos(time))).modulateScrollY(osc(4).scroll(()=>Math.cos(time/2),()=>Math.sin(time/2))).modulateHue(src(o3).scale(1.01),[0,1].reverse().smooth()).out(o3)
+      }
+
+function partialrepresentationtheothervideoversion2thatispileduppaintoverrotatedandshrinked() {
+solid().layer(src(o1).luma()).layer(src(o2).thresh().mask(src(o3).luma().colorama([0,10].smooth().fast(1/10)))).modulate(noise(2).thresh()).modulate(voronoi(1)).modulate(voronoi(2)).mult(osc(10,0.5,300).diff(gradient(1)).diff(solid([0,1].smooth().fast(1/8),[0,1].smooth().fast(1/4),[0,1].smooth().fast(1/2),[0,1].smooth())).invert().hue(()=>Math.sin(time),()=>Math.cos(time),()=>Math.tan(time)).saturate([0,10].smooth()).brightness([0,1].smooth()).contrast([1,2].smooth())).modulateKaleid(shape([3,7].reverse().smooth(),[0,1].reverse().smooth(),[0,1].smooth()).rotate(0.99,0.99).scale(1.01),[3,7].reverse().smooth()).rotate(()=>(time)).diff(o0,[0,1].smooth()).scale([7/8,1].smooth()).blend(o0,[0,1].reverse().smooth().fast(1/2)).out()
+voronoi(5,1,2.5).modulateRotate(src(o1).rotate(0.99,0.99).scale(1.01),[0,1].reverse().smooth()).out(o1)
+osc(10,1/8,300).diff(gradient(1)).diff(solid([0,1].reverse().smooth(),[0,1].reverse().smooth().fast(1/2),[0,1].reverse().smooth().fast(1/4),[0,1].reverse().smooth().fast(1/8))).diff(noise(1)).modulateScale(src(o2).scale(1.01),[0,2].smooth()).out(o2)
+shape([3,7].smooth(),[0,1].smooth(),[0,1].reverse().smooth()).modulateScrollY(osc(1).scroll(()=>Math.sin(time*-2),()=>Math.cos(time*-2))).modulateScrollY(osc(2).scroll(()=>Math.cos(time*-1),()=>Math.sin(time*-1))).modulateScrollY(osc(3).scroll(()=>Math.sin(time),()=>Math.cos(time))).modulateScrollY(osc(4).scroll(()=>Math.cos(time/2),()=>Math.sin(time/2))).modulateHue(src(o3).scale(1.01),[0,1].reverse().smooth()).out(o3)
       }
     </script>
 <br>
