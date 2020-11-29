@@ -78,6 +78,13 @@ body { background-image: url(background001.jpg);}
       var hydra = new Hydra({
         canvas: document.getElementById("myCanvas")
       })
+
+width = window.prompt("Enter width value.(Default value is 360.)", "");
+
+height = window.prompt("Enter height value.(Default value is 360.)", "");
+      
+setResolution(width,height);
+
        osc(10,0.5,300).diff(gradient(1)).diff(solid([0,0,0,0,1,1,1,1].smooth(),[0,0,1,1,0,0,1,1].smooth(),[0,1,0,1,0,1,0,1].smooth())).hue(()=>Math.sin(time),()=>Math.cos(time),()=>Math.tan(time)).invert().out()
       
       function production() {
