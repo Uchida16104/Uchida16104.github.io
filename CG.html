@@ -94,11 +94,19 @@ body { background-image: url(background001.jpg);}
         canvas: document.getElementById("myCanvas")
       })
 
-width = window.prompt("Enter screen width value.(Default value is 360.)", "");
+var width = window.prompt("Enter screen width value.(Default value is 360.)", "");
 
-height = window.prompt("Enter screen height value.(Default value is 360.)", "");
-      
+var height = window.prompt("Enter screen height value.(Default value is 360.)", "");
+    
+if( width => 0 && height => 0) {
+  
 setResolution(width,height);
+  
+} else {
+  
+  alert("Please enter value 0 or higher.");
+
+}
 
        osc(10,0.5,300).diff(gradient(1)).diff(solid([0,0,0,0,1,1,1,1].smooth(),[0,0,1,1,0,0,1,1].smooth(),[0,1,0,1,0,1,0,1].smooth())).hue(()=>Math.sin(time),()=>Math.cos(time),()=>Math.tan(time)).invert().out()
       
