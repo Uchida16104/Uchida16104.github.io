@@ -81,13 +81,11 @@
 <button onclick="partialrepresentationtheothervideoversion2thatispileduppaintoverrotatedandshrinked()"> Partial representation (the other video version 2 that is piled up paintover, rotated and shrinked) </button>
 <br>
 <button onclick="illusion()"> Illusion </button>
-<br>
 <button onclick="darkpaintover()"> Dark paintover </button>
 <button onclick="coloredwindowsmovement()"> Colored windows movement </button>
 <button onclick="noisewave()"> Noise wave </button>
 <br>
 <button onclick="simplebutcomplexanimationversion1()"> Simple but complex animation (version 1) </button>
-<br>
 <button onclick="simplebutcomplexanimationversion2()"> Simple but complex animation (version 2) </button>
 <br>
 <button onclick="movementmodulation()"> Movement modulation </button>
@@ -97,7 +95,6 @@
 <br>
 <button onclick="jagandslide()"> Jag and slide </button>
 <button onclick="modulatedballpuzzlewithringofwater()"> Modulated ball puzzle with ring of water </button>
-<br>
 <button onclick="diffusionandcontraction()"> Diffusion and contraction </button>
 <br>
 <button onclick="runalittlecodeasanoteonmysmartphoneatnight()"> Run a little code as a note on my smartphone at night </button>
@@ -114,15 +111,11 @@
 <button onclick="fadingshapes()"> Fading shapes </button>
 <br>
 <button onclick="circlemodulationversion1()"> Circle modulation (version 1) </button>
-<br>
 <button onclick="circlemodulationversion2()"> Circle modulation (version 2) </button>
-<br>
 <button onclick="circlemodulationversion3()"> Circle modulation (version 3) </button>
 <br>
 <button onclick="circlemodulationversion4()"> Circle modulation (version 4) </button>
-<br>
 <button onclick="circlemodulationversion5()"> Circle modulation (version 5) </button>
-<br>
 <button onclick="circlemodulationversion6()"> Circle modulation (version 6) </button>
 <br>
 <button onclick="conveyor()"> Conveyor </button>
@@ -403,10 +396,10 @@ osc(10,1).kaleid([3,7].smooth()).out(o3);
       }
 
 function movementmodulation() {
-s = window.prompt("Enter speed value. (0.01 is preferable.)", "");
-fp = window.prompt("Enter fps value. (12.5 is preferable.)", "");
-t = window.prompt("Enter time value. (2 is preferable.)", "");
-fr = window.prompt("Enter frame value. (10 is preferable.)", "");
+s = window.prompt("Enter speed value. (0.1 is preferable.)", "");
+fp = window.prompt("Enter fps value. (60 is preferable.)", "");
+t = window.prompt("Enter time value. (30 is preferable.)", "");
+fr = window.prompt("Enter frame value. (1 is preferable.)", "");
 shape(4,[0,1].smooth(),[0,1].reverse().smooth()).modulateScale(osc(1).shift([0,1].smooth(),[0,1].smooth().fast(1/2),[0,1].smooth().fast(1/4),[0,1].smooth().fast(1/2))).modulateScale(osc(2).shift([0,1].reverse().smooth().fast(1/8),[0,1].reverse().smooth().fast(1/4),[0,1].reverse().smooth().fast(1/2),[0,1].reverse().smooth())).scale(1/2).modulateScrollY(osc(1).scroll(()=>Math.sin(time),()=>Math.cos(time))).modulateScrollY(osc(2).scroll(()=>Math.cos(time/2),()=>Math.sin(time/2))).diff(osc(10,1).rotate([0,1.57])).modulate([0,1].smooth(),[0,1].smooth()).modulate(solid([0,1].reverse().smooth(),[0,1].reverse().smooth().fast(1/2),[0,1].reverse().smooth().fast(1/4),[0,1].reverse().smooth().fast(1/8)).r([0,1].smooth()).g([0,100].smooth().fast(1/100)).b([0,100].reverse().smooth().fast(1/100)).a([0,1].reverse().smooth())).mult(osc(10,0.5,300).diff(gradient(1)).diff(solid([0,1].smooth().fast(1/8),[0,1].smooth().fast(1/4),[0,1].smooth().fast(1/2),[0,1].smooth())).invert([0,1].smooth().fast(1/2)).hue(()=>Math.sin(time),()=>Math.cos(time),()=>Math.tan(time)).saturate([0,10].smooth()).brightness([0,1].smooth()).contrast([1,2].smooth())).out(),speed=s,fps=fp.time=t,frame=fr;
       }
 
