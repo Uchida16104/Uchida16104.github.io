@@ -82,6 +82,60 @@
 <br>
 <button onclick="illusion()"> Illusion </button>
 <br>
+<button onclick="darkpaintover()"> Dark paintover </button>
+<button onclick="coloredwindowsmovement()"> Colored windows movement </button>
+<button onclick="noisewave()"> Noise wave </button>
+<br>
+<button onclick="simplebutcomplexanimationversion1()"> Simple but complex animation (version 1) </button>
+<br>
+<button onclick="simplebutcomplexanimationversion2()"> Simple but complex animation (version 2) </button>
+<br>
+<button onclick="movementmodulation()"> Movement modulation </button>
+<button onclick="betweenpixelationandposterization()"> Between pixelation and posterization </button>
+<br>
+<button onclick="coloredwaveandthingslikevisualizedmovablesoundwave()"> Colored wave and things like visualized movable sound wave </button>
+<br>
+<button onclick="jagandslide()"> Jag and slide </button>
+<button onclick="modulatedballpuzzlewithringofwater()"> Modulated ball puzzle with ring of water </button>
+<br>
+<button onclick="diffusionandcontraction()"> Diffusion and contraction </button>
+<br>
+<button onclick="runalittlecodeasanoteonmysmartphoneatnight()"> Run a little code as a note on my smartphone at night </button>
+<br>
+<button onclick="pentagon()"> Pentagon </button>
+<button onclick="fluctuation()"> Fluctuation </button>
+<button onclick="squareplanets()"> Square planets </button>
+<button onclick="padcontrol()"> Pad control </button>
+<button onclick="bitrate()"> Bitrate </button>
+<br>
+<button onclick="leverandferriswheel()"> Lever and ferris wheel </button>
+<button onclick="circleandoval()"> Circle and oval </button>
+<button onclick="smooth()"> Smooth </button>
+<button onclick="fadingshapes()"> Fading shapes </button>
+<br>
+<button onclick="circlemodulationversion1()"> Circle modulation (version 1) </button>
+<br>
+<button onclick="circlemodulationversion2()"> Circle modulation (version 2) </button>
+<br>
+<button onclick="circlemodulationversion3()"> Circle modulation (version 3) </button>
+<br>
+<button onclick="circlemodulationversion4()"> Circle modulation (version 4) </button>
+<br>
+<button onclick="circlemodulationversion5()"> Circle modulation (version 5) </button>
+<br>
+<button onclick="circlemodulationversion6()"> Circle modulation (version 6) </button>
+<br>
+<button onclick="conveyor()"> Conveyor </button>
+<button onclick="ellipsepaintover()"> Ellipse paintover </button>
+<button onclick="movablehologramcomposedofrectangles()"> Movable hologram composed of rectangles </button>
+<br>
+<button onclick="workmadeduringabittime()"> Work made during a bit time </button>
+<br>
+<button onclick="enlargementandcontractionoftheinnerandouterdiametersofacircle()"> Enlargement and contraction of the inner and outer diameters of a circle </button>
+<br>
+<button onclick="ringcomposedofpoints()"> Ring composed of points </button>
+<button onclick="flashingswirlcomposedofpoints()"> Flashing swirl composed of points </button>
+<br>
     <canvas id="myCanvas" width="360px" height="360px"></canvas>
     <script>
       // create a new hydra-synth instance
@@ -323,6 +377,178 @@ shape([3,7].smooth(),[0,1].smooth(),[0,1].reverse().smooth()).modulateScrollY(os
       
 function illusion() {
 noise(1).thresh().mult(osc(10,0.5,300).diff(gradient(1)).diff(solid([0,1].smooth().fast(1/8),[0,1].smooth().fast(1/4),[0,1].smooth().fast(1/2),[0,1].smooth())).invert().kaleid([3,7].smooth()).hue(()=>Math.sin(time),()=>Math.cos(time),()=>Math.tan(time)).saturate([0,10].smooth()).brightness([0,1].smooth()).contrast([1,2].smooth())).modulatePixelate(shape(360,[0,1].smooth(),[0,1].reverse().smooth()).colorama([0,10].smooth()),[1,1000].smooth().fast(4),[1,1000].smooth().fast(4)).layer(voronoi(1,1,2.5).luma().mult(osc(10,0.5,300).diff(gradient(1)).diff(solid([0,1].reverse().smooth(),[0,1].smooth().reverse().fast(1/2),[0,1].reverse().smooth().fast(1/4),[0,1].reverse().smooth().fast(1/8))).hue(()=>Math.sin(time),()=>Math.cos(time),()=>Math.tan(time)).saturate([0,10].smooth()).brightness([0,1].smooth()).contrast([1,2].smooth()))).rotate(()=>Math.sin(time)).rotate(()=>Math.cos(time)).rotate(1,1).scale([0,1].smooth().fast(1/8)).invert([0,1].smooth()).diff(o0,[-1,1].smooth().fast(1/16)).rotate(()=>Math.sin(time)).rotate(-1,-1).out()
+      }
+      
+function darkpaintover() {
+shape([3,7].smooth(),[0,1].smooth(),[0,1].reverse().smooth()).diff(shape([3,7].reverse().smooth(),[0,1].reverse().smooth(),[0,1].smooth())).mult(osc(10,0.5,300).diff(gradient(1)).diff(solid([0,1].smooth().fast(1/8),[0,1].smooth().fast(1/4),[0,1].smooth().fast(1/2),[0,1].smooth())).invert().hue(()=>Math.sin(time),()=>Math.cos(time),()=>Math.tan(time)).saturate([0,10].smooth()).brightness([0,1].smooth()).contrast([1,2].smooth())).modulateScrollY(osc(1).scroll(()=>Math.sin(time),()=>Math.cos(time)).rotate(0.99,0.99).scale(1.01)).modulateScrollY(osc(2).scroll(()=>Math.cos(time/2),()=>Math.sin(time/2)).rotate(-0.99,-0.99).scale(1.01)).layer(src(o0).modulate(voronoi(2)).luma([1/8,1].smooth())).modulate(voronoi([0,2].smooth())).modulateHue(src(o0).scale(1.01).color(()=>Math.cos(time),()=>Math.tan(time),()=>Math.sin(time)),[3/16,3/8].reverse().smooth()).modulateScale(src(o0).scale(1.01).color(()=>Math.tan(time),()=>Math.sin(time),()=>Math.cos(time)),[1/8,1/4].smooth()).mult(o0,[0,1].smooth()).scale([0,1].reverse().smooth().fast(1/4)).diff(o0,[0,1].smooth()).mult(o0,[0,1].smooth()).out()
+      }
+
+function coloredwindowsmovement() {
+shape(4,[0,1].smooth(),[0,1].reverse().smooth()).mult(osc(10,0.5,300).diff(gradient(1)).diff(solid([0,1].smooth().fast(1/8),[0,1].smooth().fast(1/4),[0,1].smooth().fast(1/2),[0,1].smooth())).hue(()=>Math.sin(time),()=>Math.cos(time),()=>Math.tan(time)).saturate([0,10].smooth()).brightness([0,1].smooth()).contrast([1,2].smooth()),[0,1/2].smooth()).repeat([0,4].smooth(),[0,4].smooth()).scale([1/2,1].smooth()).mask(shape(4,[0,1].reverse().smooth(),[0,1].smooth()).mult(osc(10,0.5,300).diff(gradient(1)).diff(solid([0,1].reverse().smooth(),[0,1].reverse().smooth().fast(1/2),[0,1].reverse().smooth().fast(1/4),[0,1].reverse().smooth().fast(1/8))).hue(()=>Math.cos(time),()=>Math.tan(time),()=>Math.sin(time)).saturate([0,10].reverse().smooth()).brightness([0,1].reverse().smooth()).contrast([1,2].reverse().smooth()),[0,3/4].reverse().smooth()).scale([3/4,1].reverse().smooth()),[0,1].reverse().smooth()).rotate(1,1).modulateScrollY(osc(1).scroll(()=>Math.sin(time),()=>Math.cos(time))).modulateScrollY(osc(1).scroll(()=>Math.cos(time/2),()=>Math.sin(time/2))).modulateScale(osc(()=>Math.PI)).diff(o0,[0,1].smooth()).out()
+      }
+
+function noisewave() {
+shape(4,[0,1].fit().smooth().fast(1/8),[0,1].fit().reverse().smooth().fast(1/8)).pixelate(75,75).modulate([-1,1].ease('easeInOut').ease('easeOutQuad').fast(1/2),[-1,1].smooth().ease('sin').fast(1/3)).modulate(src(o0).mult(o0).diff(o0).modulateRotate(o0,()=>Math.tan(time)).modulateScale(o0,[0,1].smooth()).color(()=>Math.sin(time),()=>Math.cos(time),()=>Math.tan(time))).scale([1/4,1/2].smooth()).modulateScrollY(osc(1).scroll(()=>Math.sin(time),()=>Math.cos(time))).repeat([0,2].smooth().fast(1/5),[0,2].smooth().fast(1/7)).modulateScrollY(osc(2).scroll(()=>Math.cos(time/2),()=>Math.sin(time/2))).repeat([0,2].reverse().smooth().fast(1/11),[0,2].reverse().smooth().fast(1/13)).modulateScale(osc([1,3].smooth().fast(1/17)).shift([0,1].reverse().smooth(),[0,1].reverse().smooth().fast(1/2),[0,1].reverse().smooth().fast(1/4),[0,1].reverse().smooth().fast(1/8)).colorama([0,10].smooth().fast(1/10))).diff(osc(10,1/2).diff(osc(10,1/2).rotate(1.57)).r([0,1].smooth().fast(1/2)).g([0,100].smooth().fast(1/3)).b([0,100].reverse().smooth().fast(1/5)).a([0,1].reverse().smooth().fast(1/7)).invert([0,1].smooth().fast(1/19))).scale([1/4,1/2].smooth()).colorama(0.001).luma(0.999).add(voronoi(20,1,5).luma().add(noise(10)).thresh().add(shape(360,[0,1].reverse().smooth(),[0,1].smooth()).repeat(16,16).luma().thresh(0.001))).modulate(src(o0).add(src(o0).thresh().luma(),[0,1]).scale([0,1].smooth())).mult(osc(10,0.5,300).diff(gradient(1)).diff(solid([0,1].smooth().fast(1/8),[0,1].smooth().fast(1/4),[0,1].smooth().fast(1/2),[0,1].smooth())).hue(()=>Math.sin(time),()=>Math.cos(time),()=>Math.tan(time)).saturate([0,10].smooth()).brightness([-1,1].smooth()).contrast([0,1].smooth()),1/4).add(src(o0).mult(src(o0).scale([1,4].smooth())),[-1,1].smooth()).invert().out()
+      }
+
+function simplebutcomplexanimationversion1() {
+noise(1).thresh().diff(noise(2).thresh()).layer(noise(3).thresh()).modulate(noise(4).thresh()).add(voronoi(5,1,5).luma().diff(voronoi(6,1,6).luma()).layer(voronoi(7,1,7).luma()).modulate(voronoi(8,1,8).luma())).blend(shape(360,[0,1].smooth(),[0,1].reverse().smooth()).colorama(1).diff(shape(360,[0,1].reverse().smooth(),[0,1].smooth()).colorama(2)).layer(shape(360,[0,1].smooth(),[0,1].reverse().smooth()).colorama(3)).modulate(shape(360,[0,1].reverse().smooth(),[0,1].smooth()).colorama(4))).out()
+      }
+
+function simplebutcomplexanimationversion2() {
+solid().diff(src(o1).kaleid([3,7].smooth()),[0,1].smooth()).diff(src(o1).modulateKaleid(o1,[3,7].smooth()),[0,1].reverse().smooth().fast(1/2)).diff(src(o1).rotate(-1,-1),[0,1].smooth().fast(1/3)).diff(src(o1).modulateRotate(o1,()=>(time)),[0,1].reverse().smooth().fast(1/5)).diff(src(o1).scale([0,1].smooth()),[0,1].smooth().fast(1/7)).diff(src(o1).modulateScale(src(o1).shift([0,1].smooth(),[0,1].smooth().fast(1/2),[0,1].smooth().fast(1/4),[0,1].smooth().fast(1/8)),[0,1].reverse().smooth()),[0,1].reverse().smooth().fast(1/11)).diff(src(o1).scroll(()=>Math.sin(time),()=>Math.cos(time)),[0,1].smooth().fast(1/13)).diff(src(o1).modulateScrollY(src(o1).scroll(()=>Math.sin(time),()=>Math.cos(time))).modulateScrollY(src(o1).scroll(()=>Math.cos(time/2),()=>Math.cos(time))),[0,1].reverse().smooth().fast(1/17)).out();
+shape([3,7].smooth(),[0,1].smooth(),[0,1].reverse().smooth()).out(o1);
+solid().diff(src(o3).kaleid([3,7].smooth().fast(1/2)),[0,1].smooth().fast(1/3)).diff(src(o3).modulateKaleid(o3,[3,7].smooth().fast(1/5)),[0,1].reverse().smooth().fast(1/7)).diff(src(o3).rotate(-1,-1),[0,1].smooth().fast(1/11)).diff(src(o3).modulateRotate(o3,()=>(time)),[0,1].reverse().smooth().fast(1/11)).diff(src(o3).scale([0,1].smooth()),[0,1].smooth().fast(1/13)).diff(src(o3).modulateScale(src(o3).shift([0,1].smooth().fast(1/8),[0,1].smooth().fast(1/4),[0,1].smooth().fast(1/2),[0,1].smooth()),[0,1].reverse().smooth().fast(1/17)),[0,1].reverse().smooth().fast(1/19)).diff(src(o3).scroll(()=>Math.sin(time),()=>Math.cos(time)),[0,1].smooth().fast(1/23)).diff(src(o3).modulateScrollY(src(o3).scroll(()=>Math.sin(time),()=>Math.cos(time))).modulateScrollY(src(o3).scroll(()=>Math.cos(time/2),()=>Math.cos(time))),[0,1].reverse().smooth().fast(1/29)).out(o2);
+osc(10,1).kaleid([3,7].smooth()).out(o3);
+      }
+
+function movementmodulation() {
+s = window.prompt("Enter speed value. (0.01 is preferable.)", "");
+fp = window.prompt("Enter fps value. (12.5 is preferable.)", "");
+t = window.prompt("Enter time value. (2 is preferable.)", "");
+fr = window.prompt("Enter frame value. (10 is preferable.)", "");
+shape(4,[0,1].smooth(),[0,1].reverse().smooth()).modulateScale(osc(1).shift([0,1].smooth(),[0,1].smooth().fast(1/2),[0,1].smooth().fast(1/4),[0,1].smooth().fast(1/2))).modulateScale(osc(2).shift([0,1].reverse().smooth().fast(1/8),[0,1].reverse().smooth().fast(1/4),[0,1].reverse().smooth().fast(1/2),[0,1].reverse().smooth())).scale(1/2).modulateScrollY(osc(1).scroll(()=>Math.sin(time),()=>Math.cos(time))).modulateScrollY(osc(2).scroll(()=>Math.cos(time/2),()=>Math.sin(time/2))).diff(osc(10,1).rotate([0,1.57])).modulate([0,1].smooth(),[0,1].smooth()).modulate(solid([0,1].reverse().smooth(),[0,1].reverse().smooth().fast(1/2),[0,1].reverse().smooth().fast(1/4),[0,1].reverse().smooth().fast(1/8)).r([0,1].smooth()).g([0,100].smooth().fast(1/100)).b([0,100].reverse().smooth().fast(1/100)).a([0,1].reverse().smooth())).mult(osc(10,0.5,300).diff(gradient(1)).diff(solid([0,1].smooth().fast(1/8),[0,1].smooth().fast(1/4),[0,1].smooth().fast(1/2),[0,1].smooth())).invert([0,1].smooth().fast(1/2)).hue(()=>Math.sin(time),()=>Math.cos(time),()=>Math.tan(time)).saturate([0,10].smooth()).brightness([0,1].smooth()).contrast([1,2].smooth())).out(),speed=s,fps=fp.time=t,frame=fr;
+      }
+
+function betweenpixelationandposterization() {
+solid().add(o1,[0,1].smooth(1/4)).add(o2,[0,1].reverse().smooth(1/4)).modulateScale(src(o0).scale(1.01),[0,8].smooth()).scale([1/4,3/2].smooth().fast(1/2)).add(o0,[-1,1].smooth().fast(1/4)).out();
+src(o3).repeat(2,2).modulateScale(osc(1).shift([0,1].smooth(),[0,1].smooth().fast(1/2),[0,1].smooth().fast(1/4),[0,1].smooth().fast(1/8))).mult(osc(1,2,300).diff(gradient(1)).diff(solid([0,1].reverse().smooth(),[0,1].reverse().smooth().fast(1/2),[0,1].reverse().smooth().fast(1/4),[0,1].reverse().smooth().fast(1/8))).invert().hue(()=>Math.cos(time),()=>Math.tan(time),()=>Math.sin(time)).saturate([0,10].reverse().smooth()).brightness([0,1].reverse().smooth()).contrast([1,2].reverse().smooth())).out(o1);
+src(o3).repeat(2,2).modulateScrollY(osc(1).scroll(()=>Math.sin(time),()=>Math.cos(time))).modulateScrollY(osc(2).scroll(()=>Math.cos(time/2),()=>Math.sin(time/2))).mult(osc(10,1/2,300).diff(gradient(1)).diff(solid([0,1].smooth().fast(1/8),[0,1].smooth().fast(1/4),[0,1].smooth().fast(1/2),[0,1].smooth())).hue(()=>Math.sin(time),()=>Math.cos(time),()=>Math.tan(time)).saturate([0,10].smooth()).brightness([0,1].smooth()).contrast([0,2].smooth())).out(o2);
+shape(4,[0,1].smooth(),[0,1].reverse().smooth()).modulatePixelate(src(o0).color([0,1].smooth(),[0,1].smooth().fast(1/2),[0,1].smooth().fast(1/4)),[0,1].smooth()).out(o3);
+      }
+
+function coloredwaveandthingslikevisualizedmovablesoundwave() {
+shape(4,0.1,0.5).modulateScale(osc(1).colorama(10).shift([0,1].smooth().fast(1/8),[0,1].smooth().fast(1/4),[0,1].smooth().fast(1/2),[0,1].smooth()).scroll(()=>Math.sin(time),()=>Math.cos(time))).modulateScale(osc(2).colorama(10).shift([0,1].reverse().smooth(),[0,1].reverse().smooth().fast(1/2),[0,1].reverse().smooth().fast(1/4),[0,1].reverse().smooth().fast(1/8)).scroll(()=>Math.cos(time/2),()=>Math.sin(time/2))).scale(1/2).repeat(2,2).color(1,1/8,1).layer(osc(10,0,300).diff(gradient(1)).diff(solid([0,1].smooth().fast(1/8),[0,1].smooth().fast(1/4),[0,1].smooth().fast(1/2),[0,1].smooth())).hue(()=>Math.sin(time),()=>Math.cos(time),()=>Math.tan(time)).saturate([0,10].smooth()).brightness([0,1].smooth()).contrast([1,2].smooth()).scale(0.1).invert().luma()).scale(()=>(a.fft[2]*0.5+1)).out()
+      }
+
+function jagandslide() {
+shape(4,[0,1].smooth(),[0,1].reverse().smooth()).colorama(5).rotate(()=>Math.sin(time)).modulatePixelate(shape(4,[0,1].reverse().smooth(),[0,1].smooth()).colorama(5).rotate(()=>Math.cos(time))).modulateScale(osc(()=>Math.PI).colorama(10).shift([0,1].reverse().smooth(),[0,1].reverse().smooth().fast(1/2),[0,1].reverse().smooth().fast(1/4),[0,1].reverse().smooth().fast(1/8)),[0,1].smooth().fast(1/2)).modulateScrollY(osc(1).scroll(()=>Math.sin(time),()=>Math.cos(time)),[0,1].smooth().fast(1/3)).modulateScrollY(osc(2).scroll(()=>Math.cos(time/2),()=>Math.sin(time/2)),[0,1].smooth().fast(1/5)).out()
+      }
+
+function modulatedballpuzzlewithringofwater() {
+noise(3).diff(noise(3).thresh()).diff(noise(3).luma()).diff(noise(3).colorama()).layer(voronoi(5,1,5).add(voronoi(5,1,5).thresh()).layer(voronoi(5,1,5).luma()).add(voronoi(5,1,5).thresh())).modulate(shape(360,[0,1].smooth(),[0,1].reverse().smooth()).diff(shape(360,[0,1].reverse().smooth(),[0,1].smooth()).thresh()).diff(shape(360,[0,1].smooth(),[0,1].reverse().smooth()).luma()).diff(shape(360,[0,1].reverse().smooth(),[0,1].smooth()).colorama())).blend(osc(10,1/2,300).diff(gradient(1)).diff(solid([0,1].smooth().fast(1/8),[0,1].smooth().fast(1/4),[0,1].smooth().fast(1/2),[0,1].smooth())).invert().hue(()=>Math.sin(time),()=>Math.cos(time),()=>Math.tan(time)).saturate([0,10].smooth()).brightness([0,1].smooth()).contrast([1,2].smooth()).scale(1/4)).out()
+      }
+
+function diffusionandcontraction() {
+shape(360,[0,1].smooth(),[0,1].reverse().smooth()).scale(1/2).mult(osc(10,0.5,300).diff(gradient(1)).diff(solid([0,1].smooth().fast(1/8),[0,1].smooth().fast(1/4),[0,1].smooth().fast(1/2),[0,1].smooth())).invert().hue(()=>Math.sin(time),()=>Math.cos(time),()=>Math.tan(time)).saturate([0,10].smooth()).brightness([0,10].smooth()).contrast([1,2].smooth())).modulateScale(src(o0).scale([0,1].smooth())).layer(voronoi(20,1,5).mult(osc(1,2,300).diff(gradient(2)).diff(solid([0,1].reverse().smooth(),[0,1].reverse().smooth().fast(1/2),[0,1].reverse().smooth().fast(1/4),[0,1].reverse().smooth().fast(1/8))).invert().hue(()=>Math.cos(time),()=>Math.tan(time),()=>Math.sin(time)).saturate([0,10].reverse().smooth()).brightness([0,10].reverse().smooth()).contrast([1,2].reverse().smooth())).modulateScale(shape(360,[0,1].reverse(),[0,1].smooth())).luma()).out()
+      }
+
+function runalittlecodeasanoteonmysmartphoneatnight() {
+osc(10,1).kaleid().layer(shape(4,[0,1].smooth(),[0,1].reverse().smooth()).rotate(1.57/2).colorama(10).luma().mask(voronoi(20,1,5).diff(noise(2).thresh()).luma()).modulateScale(src(o0).scale(1.01),[0,1].smooth())).out()
+      }
+
+function pentagon() {
+voronoi(2,1).modulate(shape(5,0,1).colorama(10).luma().scale(1)).layer(noise(2).thresh().modulatePixelate(shape(5),30,30).mask(osc(10,0).kaleid(5).scale([0,2].smooth().fast(1/8)).luma().colorama(10).rotate(1.57).thresh()).add(o0,[0,1].smooth().fast(1/2))).out()
+      }
+
+function fluctuation() {
+solid().mult(shape(360,[0,1].smooth(),[0,1].reverse().smooth()).repeat(16,16)).layer(shape(4,[0,1].reverse().smooth(),[0,1].smooth()).repeat(8,8).luma().colorama([0,1].smooth().fast(1/2))).layer(shape(4,[0,1].smooth(),[0,1].reverse().smooth()).repeat(4,4).luma().colorama([0,1].smooth().fast(1/4))).layer(shape(4,[0,1].reverse().smooth(),[0,1].smooth()).repeat(4,4).luma().colorama([0,1].smooth().fast(1/8))).layer(shape(4,[0,1].smooth(),[0,1].reverse().smooth()).repeat(2,2).luma().colorama([0,1].smooth().fast(1/16))).modulateScale(osc(()=>Math.PI)).scrollX(()=>(time)).modulateScrollY(osc(1).scroll(()=>Math.sin(time),()=>Math.cos(time))).modulateScrollY(osc(2).scroll(()=>Math.cos(time/2),()=>Math.sin(time/2))).modulateRotate(solid(),()=>Math.sin(time),()=>Math.cos(time)).scale([1/8,1].smooth().fast(1/4)).add(o0,[0,1].smooth().fast(1/4)).out()
+      }
+
+function squareplanets() {
+shape(4,[0,1].smooth(),[0,1].reverse().smooth()).rotate(2,2).scale(1/4).layer(shape(4,[0,1].reverse().smooth(),[0,1].smooth()).scale(1/8).rotate(-2,-2).scrollX(1).scroll(()=>Math.sin(time*2)/4,()=>Math.cos(time*2)/4).luma()).layer(shape(4,[0,1].smooth(),[0,1].reverse().smooth()).scale(1/8).rotate(2,2).scrollX(1).scroll(()=>Math.sin(time*2)/2.75,()=>Math.cos(time*2)/2.75).luma()).layer(shape(4,[0,1].smooth(),[0,1].reverse().smooth()).scale(1/8).rotate(-2,-2).scrollX(1).scroll(()=>Math.sin(time*2)/2,()=>Math.cos(time*2)/2).luma()).add(o0,[0,1].smooth()).repeat([1,1].smooth().fast(1/4),[1,1].smooth().fast(1/4)).scale(1.125).repeat([1,4].smooth().fast(1/16),[1,4].smooth().fast(1/16)).out()
+      }
+
+function padcontrol() {
+var n = [4,16].smooth().fast(1/16);
+pad=()=>osc(10,1/2,300).diff(osc(10,1/2,300).rotate(1.57)).pixelate(n,n).contrast(2);
+solid().layer(src(o1).mult(src(o2))).out();
+shape(4,[0,1].smooth().fast(1/16),[0,1].reverse().smooth().fast(1/16)).repeat(8,8).mult(o1,63/64).contrast(2).out(o1);
+pad().scale([1,2].reverse().smooth()).mult(o2,63/64).out(o2);
+      }
+
+function bitrate() {
+shape(360).scroll(()=>time,()=>time).scale(1/256).repeat(8,8).mult(osc(10,1).repeatX(100).rotate(1.57)).layer(src(o0).luma().colorama([0,1].smooth())).scale([0,10].smooth()).out()
+      }
+
+function leverandferriswheel() {
+A=window.innerHeight/window.innerWidth;
+osc(10,1/2).modulateScale(shape(2,[0,1].smooth(),[0,1].reverse().smooth()).diff(shape(2,[0,1].smooth(),[0,1].reverse().smooth()).rotate(1.57))).diff(shape(4,[0,1].reverse().smooth(),[0,1].smooth()).scale(2.875).repeat(3,3)).scale([0,1].smooth().fast(1/4)).modulateScrollY(osc(1).scroll(()=>Math.sin(time),()=>Math.cos(time))).modulateScrollY(osc(2).scroll(()=>Math.cos(time/2),()=>Math.sin(time/2))).modulateScale(osc(3).colorama([0,5].smooth().fast(1/10)).shift([0,1].smooth(),[0,1].smooth().fast(1/2),[0,1].smooth().fast(1/4),[0,1].smooth().fast(1/8))).scale([1/4,1].smooth().fast(1/16)).color([0,1].reverse().smooth().fast(1/2),[0,1].reverse().smooth().fast(1/4),[0,1].reverse().smooth().fast(1/8)).diff(osc(10,0.5,300).diff(gradient(1)).diff(solid([0,1].smooth().fast(1/8),[0,1].smooth().fast(1/4),[0,1].smooth().fast(1/2),[0,1].smooth())).hue(()=>Math.sin(time),()=>Math.cos(time),()=>Math.tan(time)).saturate([0,10].smooth()).brightness([0,1].smooth()).contrast([1,2].smooth()).thresh().luma()).layer(shape(2,[0,1].smooth(),[0,1].reverse().smooth()).luma().r([0,1].smooth()).mask(shape(3,[0,1].reverse().smooth(),[0,1].smooth()).luma().g([0,100].reverse().smooth().fast(1/100))).scale(1/2).rotate(1,1).repeat(4,4).rotate(()=>Math.sin(time)).rotate(-1,-1).scale([0,1].smooth().fast(1/2))).layer(shape(4,[0,1].smooth(),[0,1].reverse().smooth()).luma().a([0,1].reverse().smooth()).mask(shape(360,[0,1].reverse().smooth(),[0,1].smooth()).luma().g([0,100].smooth().fast(1/100)).scale(1/2).rotate(()=>(time)).repeat(2,2)).rotate(()=>Math.cos(time)).rotate(()=>(time*-1)).scale([0,1].reverse().smooth().fast(1/2))).scale([1/2,1].ease('easeInOutQuad'),A,[1/2,1].ease('easeInOutQuint')).scale([3/4,2].reverse().ease('sin'),1/A,[3/4,2].reverse().smooth()).out();
+      }
+
+function circleandoval() {
+shape(360,[0,1].smooth(),[0,1].reverse().smooth()).scale([1/2,2].smooth(),[1/2,2].reverse().smooth()).scale(1/2).rotate([0,10].smooth(),[0,10].smooth()).scrollX([-1,1].smooth()).repeat([1,4].smooth(),[1,4].smooth()).add(o0,[-1,1].smooth().fast(1/16)).out()
+      }
+
+function smooth() {
+osc(10,1/8,300).diff(gradient(1)).diff(solid([0,1].smooth().fast(1/8),[0,1].smooth().fast(1/4),[0,1].smooth().fast(1/2),[0,1].smooth())).contrast([1/2,2].smooth().fast(1/2)).kaleid(360).scale([1/2,2].smooth(),[1/2,2].reverse().smooth()).scale(1/2).rotate(()=>(time)).layer(voronoi(5,1,5).luma()).modulate(noise(3).thresh()).modulateScale(shape(360,[0,1].smooth(),[0,1].reverse().smooth()).colorama(5).scale([1/2,2].smooth(),[1/2,2].reverse().smooth()).scale(1/2).rotate(()=>(time*-1))).color([0,1].smooth(),[0,1].smooth().fast(1/2),[0,1].smooth().fast(1/4)).out()
+      }
+
+function fadingshapes() {
+solid().layer(src(o1).repeat(8,8).luma()).layer(src(o2).repeat(4,4).luma()).layer(src(o3).repeat(2,2).luma()).scale([1/4,1].smooth().fast(1/5)).out();
+osc(10,1/8).kaleid(4).rotate(1.57/2).mask(shape(4,[0,1].smooth().fast(1/2),[0,1].reverse().smooth().fast(1/2))).color([0,1].smooth().fast(1/4),[0,1].smooth().fast(1/2),[0,1].smooth()).out(o1);
+osc(10,-1/8).kaleid(3).rotate(1.57).mask(shape(3,[0,1].reverse().smooth().fast(1/4),[0,1].smooth().fast(1/4))).color([0,1].smooth().fast(1/2),[0,1].smooth(),[0,1].smooth().fast(1/4)).out(o2);
+osc(10,1/8).kaleid(360).mask(shape(360,[0,1].reverse().smooth().fast(1/8),[0,1].reverse().smooth().fast(1/8))).color([0,1].smooth().fast(1/4),[0,1].smooth().fast(1/2),[0,1].smooth()).out(o3);
+      }
+
+function circlemodulationversion1() {
+osc(10,1/4,300).kaleid(360).mask(src(o1).luma()).hue(()=>Math.sin(time),()=>Math.cos(time),()=>Math.tan(time)).saturate([0,10].smooth()).brightness([-1,0].smooth()).contrast([1,2].smooth()).scale([1/2,1].smooth(),[1/2,1].reverse().smooth()).out();
+shape(360,[0,1].smooth(),[0,1].reverse().smooth()).modulateScale(shape(360,[0,1].reverse().smooth(),[0,1].smooth()).colorama(1).diff(src(o1)).thresh(1/2,1/4)).luma().out(o1);
+      }
+
+function circlemodulationversion2() {
+solid().layer(src(o1).luma()).out();
+osc(10,1/4,300).kaleid(360).mask(src(o2).luma()).hue(()=>Math.sin(time),()=>Math.cos(time),()=>Math.tan(time)).saturate([0,10].smooth()).brightness([-1,0].smooth()).contrast([1,2].smooth()).scale([1/2,1].smooth(),[1/2,1].reverse().smooth()).out(o1);
+shape(360,[0,1].smooth(),[0,1].reverse().smooth()).modulateScale(shape(360,[0,1].reverse().smooth(),[0,1].smooth()).colorama(1).diff(src(o2)).thresh(1/2,1/4)).luma().out(o2);
+      }
+
+function circlemodulationversion3() {
+solid().layer(src(o1).luma()).scale([1/2,1].smooth(),[1/2].reverse().smooth()).rotate([0,10].smooth().fast(1/10),[0,10].smooth().fast(1/10)).out();
+osc(10,1/4,300).kaleid(360).mask(src(o2).luma()).hue(()=>Math.sin(time),()=>Math.cos(time),()=>Math.tan(time)).saturate([0,10].smooth()).brightness([-1,0].smooth()).contrast([1,2].smooth()).scale([1/2,1].smooth(),[1/2,1].reverse().smooth()).out(o1);
+shape(360,[0,1].smooth(),[0,1].reverse().smooth()).modulateScale(shape(360,[0,1].reverse().smooth(),[0,1].smooth()).colorama(1).diff(src(o2)).thresh(1/2,1/4)).luma().out(o2);
+      }
+
+function circlemodulationversion4() {
+solid().layer(src(o1).luma()).scale([1/2,1].smooth(),[1/2].reverse().smooth()).rotate([0,10].smooth().fast(1/10),[0,10].smooth().fast(1/10)).add(o0,[-1,1].smooth().fast(1/8)).out();
+osc(10,1/4,300).kaleid(360).mask(src(o2).luma()).hue(()=>Math.sin(time),()=>Math.cos(time),()=>Math.tan(time)).saturate([0,10].smooth()).brightness([-1,0].smooth()).contrast([1,2].smooth()).scale([1/2,1].smooth(),[1/2,1].reverse().smooth()).out(o1);
+shape(360,[0,1].smooth(),[0,1].reverse().smooth()).modulateScale(shape(360,[0,1].reverse().smooth(),[0,1].smooth()).colorama(1).diff(src(o2)).thresh(1/2,1/4)).luma().out(o2);
+      }
+
+function circlemodulationversion5() {
+solid().layer(src(o1).luma()).rotate([0,10].smooth().fast(1/10),[0,10].smooth().fast(1/10)).out();
+osc(10,1/4,300).kaleid(360).mask(src(o2).luma()).hue(()=>Math.sin(time),()=>Math.cos(time),()=>Math.tan(time)).saturate([0,10].smooth()).brightness([-1,0].smooth()).contrast([1,2].smooth()).scale([1/2,1].smooth(),[1/2,1].reverse().smooth()).out(o1);
+shape(360,[0,1].smooth(),[0,1].reverse().smooth()).modulateScale(shape(360,[0,1].reverse().smooth(),[0,1].smooth()).colorama(1).diff(src(o2)).thresh(1/2,1/4)).luma().out(o2);
+      }
+
+function circlemodulationversion6() {
+solid().layer(src(o1).luma()).rotate([0,10].smooth().fast(1/10),[0,10].smooth().fast(1/10)).add(o0,[0,4/3].smooth().fast(1/2)).out();
+osc(10,1/4,300).kaleid(360).mask(src(o2).luma()).hue(()=>Math.sin(time),()=>Math.cos(time),()=>Math.tan(time)).saturate([0,10].smooth()).brightness([-1,0].smooth()).contrast([1,2].smooth()).scale([1/2,1].smooth(),[1/2,1].reverse().smooth()).out(o1);
+shape(360,[0,1].smooth(),[0,1].reverse().smooth()).modulateScale(shape(360,[0,1].reverse().smooth(),[0,1].smooth()).colorama(1).diff(src(o2)).thresh(1/2,1/4)).luma().out(o2);
+      }
+
+function conveyor() {
+osc(10,1/4).diff(osc(10,1/4).rotate(1.57)).rotate(1.57/2).luma([0,1].smooth()).layer(osc(10,1/4).diff(osc(10,1/4).rotate(1.57)).rotate(1.57*1.5).luma([0,1].reverse().smooth().fast(1/2))).layer(osc(10,-1/4).diff(osc(10,-1/4).rotate(1.57)).rotate(1.57/2).luma([0,1].smooth().fast(1/3))).layer(osc(10,-1/4).diff(osc(10,-1/4).rotate(1.57)).rotate(1.57*1.5).luma([0,1].reverse().smooth().fast(1/4))).layer(shape(360,[0,1].smooth(),[0,1].reverse().smooth()).repeat(2,2).scrollX(()=>(time/2)).luma([0,1].smooth().fast(1/5))).layer(shape(360,[0,1].reverse().smooth(),[0,1].smooth()).repeat(2,2).scrollX(()=>(time/-2)).luma([0,1].reverse().smooth().fast(1/6))).layer(shape(360,[0,1].smooth(),[0,1].reverse().smooth()).repeat(2,2).scrollY(()=>(time/-2)).luma([0,1].smooth().fast(1/7))).layer(shape(360,[0,1].reverse().smooth(),[0,1].smooth()).repeat(2,2).scrollY(()=>(time/2)).luma([0,1].reverse().smooth().fast(1/8))).out()
+      }
+
+function ellipsepaintover() {
+shape(360,[0,1].smooth(),[0,1].reverse().smooth()).scale([1/2,1].smooth(),[1/2,1].reverse().smooth()).rotate([0,10].smooth().fast(1/10),[0,10].smooth().fast(1/10)).add(src(o0).blend(o0,[0,2].smooth().fast(1/8)),[-1,1].reverse().smooth().fast(1/8)).luma().diff(o0,[0,1].smooth().fast(1/8)).mult(shape(360,[0,1].reverse().smooth(),[0,1].smooth()).scale([1/2,2].smooth().fast(1/2))).out()
+      }
+
+function movablehologramcomposedofrectangles() {
+var xpos = [0.15,0.15,0.85,0.85].smooth().fast(10);
+var ypos = [0.15,0.85,0.85,0.15].smooth().fast(10);
+substrate = () => shape(4,0.4,0.6).colorama(0.1).luma(0.99).scale(1.01).mult(solid(0,[0,1,1].reverse().smooth(),[1,0,1].reverse().smooth()).brightness([0,1].smooth()).contrast(2)).scale(1.1);
+light = () => shape(360,0,0.01).scale(2).mult(solid(0,[0,1,1].smooth(),[1,0,1].smooth()).brightness([0,1].smooth()).contrast(5)).scroll(xpos,ypos).scroll(0.5,0.5).scale(3/4*1.01).scale(1.1);
+circuit = () => solid().layer(substrate()).layer(light().luma().contrast(10));
+solid().layer(src(o1)).layer(src(o2)).blend(circuit().scroll(()=>Math.cos(time),()=>Math.sin(time))).out();
+light().contrast(10).scroll(()=>Math.sin(time),()=>Math.cos(time)).add(o1,[0,1].smooth().fast(1/8)).blend(o1,[0,1].smooth().fast(1/16)).out(o1);
+substrate().scroll(()=>Math.sin(time),()=>Math.cos(time)).add(o2,[0.98,1].smooth()).blend(o2,[0,1].smooth()).out(o2);
+      }
+
+function workmadeduringabittime() {
+noise(10).colorama(.001).saturate(99).posterize(.999).layer(voronoi(20,1,10).luma()).layer(shape(360,0,1).repeat(75,75).luma()).out()
+      }
+
+function enlargementandcontractionoftheinnerandouterdiametersofacircle() {
+voronoi(20,1,5).color([0,1].smooth().fast(1/4),[0,1].smooth().fast(1/2),[0,1].smooth()).mult(osc(10,1/2,300).diff(gradient(1)).diff(solid([0,1].smooth().fast(1/8),[0,1].smooth().fast(1/4),[0,1].smooth().fast(1/2),[0,1].smooth())).brightness(10)).mask(shape(360,[0,1].smooth(),[0,1].reverse().smooth()).scale([1/2,2].smooth(1/2)).rotate(()=>(time)).invert().colorama(10)).out()
+      }
+
+function ringcomposedofpoints() {
+shape(360,[0,1].smooth(),[0,1].reverse().smooth()).scale(1/64).mult(osc(10,1/2,300).diff(gradient(1)).diff(solid([0,1].smooth().fast(1/8),[0,1].smooth().fast(1/4),[0,1].smooth().fast(1/2),[0,1].smooth())).invert().hue(()=>Math.sin(time),()=>Math.cos(time),()=>Math.tan(time)).saturate([0,10].smooth()).brightness([0,1].smooth()).contrast([1,2].smooth())).scroll(()=>Math.sin(time)/10,()=>Math.cos(time)/10).blend(o0,[0,1].smooth().fast(1/2)).rotate(1,1).blend(shape(360,[0,1].reverse().smooth(),[0,1].smooth()).scale(1/64).scroll(()=>Math.cos(time)/10,()=>Math.sin(time)/10).blend(o0,[0,1].smooth().fast(1/2)).rotate(-1,-1)).scale([1/2,1].smooth()).add(o0,[0,3/4].smooth()).scale(13/12).layer(shape(360,[0,1].smooth(),[0,1].reverse().smooth()).scale([0,2].smooth()).brightness(-1).scale([1,2].reverse().smooth()).mask(shape(360,[0,1].reverse().smooth(),[0,1].smooth())).luma()).scale([0.99,1.01].smooth()).out()
+      }
+
+function flashingswirlcomposedofpoints() {
+shape(360,[0,1].smooth(),[0,1].reverse().smooth()).mult(osc(10,1/2,300).diff(gradient(1)).diff(solid([0,1].smooth().fast(1/8),[0,1].smooth().fast(1/4),[0,1].smooth().fast(1/2),[0,1].smooth())).invert([0,1].smooth().fast(1/8)).hue(()=>Math.sin(time),()=>Math.cos(time),()=>Math.tan(time)).saturate([0,10].smooth()).brightness([0,1].smooth()).contrast([1,2].smooth()).invert([0,1].reverse().smooth().fast(1/16))).scale([1/8,1/64].reverse().smooth().fast(1/4)).scroll(()=>Math.sin(time)*Math.log(time),()=>Math.cos(time)*Math.log(time)).blend(o0,[3/5,13/20].smooth().fast(1/2)).rotate(1,1).scale([1/2,1].smooth()).add(o0,[1/4,9/20].smooth()).scale([7/8,1].smooth()).colorama([-0.01,0.01].smooth().fast(1/10)).contrast([0.99,1.01].smooth()).out()
       }
     </script>
 <br>
