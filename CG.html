@@ -128,6 +128,7 @@
 <br>
 <button onclick="ringcomposedofpoints()"> Ring composed of points </button>
 <button onclick="flashingswirlcomposedofpoints()"> Flashing swirl composed of points </button>
+<button onclick="pond()"> Pond </button>
 <br>
     <canvas id="myCanvas" width="360px" height="360px"></canvas>
     <script>
@@ -542,6 +543,10 @@ shape(360,[0,1].smooth(),[0,1].reverse().smooth()).scale(1/64).mult(osc(10,1/2,3
 
 function flashingswirlcomposedofpoints() {
 shape(360,[0,1].smooth(),[0,1].reverse().smooth()).mult(osc(10,1/2,300).diff(gradient(1)).diff(solid([0,1].smooth().fast(1/8),[0,1].smooth().fast(1/4),[0,1].smooth().fast(1/2),[0,1].smooth())).invert([0,1].smooth().fast(1/8)).hue(()=>Math.sin(time),()=>Math.cos(time),()=>Math.tan(time)).saturate([0,10].smooth()).brightness([0,1].smooth()).contrast([1,2].smooth()).invert([0,1].reverse().smooth().fast(1/16))).scale([1/8,1/64].reverse().smooth().fast(1/4)).scroll(()=>Math.sin(time)*Math.log(time),()=>Math.cos(time)*Math.log(time)).blend(o0,[3/5,13/20].smooth().fast(1/2)).rotate(1,1).scale([1/2,1].smooth()).add(o0,[1/4,9/20].smooth()).scale([7/8,1].smooth()).colorama([-0.01,0.01].smooth().fast(1/10)).contrast([0.99,1.01].smooth()).out()
+      }
+      
+function pond() {
+solid().layer(shape(360,[0,1].smooth(),[0,1].reverse().smooth()).thresh()).diff(shape(360,[0,1].reverse().smooth(),[0,1].smooth()).luma()).modulate(shape(360,[0,1].smooth().fast(1/2),[0,1].reverse().smooth().fast(1/2)).colorama([0,10].smooth().fast(1/10)).thresh()).modulate(shape(360,[0,1].reverse().smooth().fast(1/2),[0,1].smooth().fast(1/2)).colorama([0,10].reverse().smooth().fast(1/10)).luma()).rotate(1/50,1/50).scale(4/5).mult(osc(10,1/2,300).diff(gradient(1)).diff(solid([0,1].smooth().fast(1/8),[0,1].smooth().fast(1/4),[0,1].smooth().fast(1/2),[0,1].smooth()))).blend(o0).out()
       }
     </script>
 <br>
