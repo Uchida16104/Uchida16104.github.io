@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>hydra scanner</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- import the webpage's stylesheet -->
+    <style type="text/css">
+body, html {
+  font-family: helvetica, arial, sans-serif;
+  margin: 10px;
+  background: radial-gradient(black,darkgreen,black,darkblue);
+  background-size: 200% 200%;
+  animation: scale 60s ease infinite;
+}
+
+@keyframes scale {
+  	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+h1 {
+  font-size: 75px;
+  font-style: italic;
+  color: white;
+  background: conic-gradient(black,transparent) ;
+  animation: spin 60s ease infinite;
+}
+
+@keyframes spin {
+    from { background: conic-gradient(black,transparent); transform: rotateY(0deg); }
+    to { background: linear-gradient(transparent,black); transform: rotateY(360deg); }
+}
+
+button {
+  display: inline-block;
+  font-size: 12px;
+  padding: 10px;
+  margin: 10px;
+}
+</style>
+    
+    <!-- import the latest version of hydra synth-->
+    <script src="https://unpkg.com/hydra-synth"></script>
+</head>
+  <body>
+    <h1>hydra scanner</h1>
+    <form name="js">
+        <font color="white">
+        width:<input type="text" name="width" value="">
+        height:<input type="text" name="height" value="">
+        <input type="button" value="set" onclick="set()"><br>
+        </font>
+    </form>
+    <button onclick="scanner1()"> scanner1 </button>
+    <button onclick="scanner2()"> scanner2 </button>
+    <button onclick="scanner3()"> scanner3 </button>
+    <button onclick="scanner4()"> scanner4 </button>
+    <button onclick="start()"> start </button>
+    <button onclick="stop()"> stop </button>
+    <button onclick="reset()"> reset </button>
+      <br>
+      <canvas id="myCanvas" width="400px" height="400px"></canvas>
+    <script>
+      // create a new hydra-synth instance
+      var hydra = new Hydra({
+        canvas: document.getElementById("myCanvas"),
+        detectAudio: false
+      })
+         solid([0,1].smooth().fast(1/8),[0,1].smooth().fast(1/4),[0,1].smooth().fast(1/2),[0,1].smooth()).colorama([0,1].smooth()).diff(gradient(1)).diff(osc(1,2,300)).hue(()=>Math.sin(time),()=>Math.cos(time),()=>Math.tan(time)).saturate([0,10].smooth().fast(1/10)).brightness([-1,1].reverse().smooth().fast(1/2)).scale(.1).diff(shape(2,.1).modulate(osc().contrast(()=>(a.fft[0]*0.5+1)))).invert().out();
+        
+      // create functions to use with buttons
+      function set() {
+          var w = document.js.width.value;
+          var h = document.js.height.value;
+          setResolution(w,h)
+      }
+      function scanner1() {
+s0.initCam()
+synth=()=>src(s0).invert(0)
+solid().add(src(o1).sub(o2)).invert(0).out()
+synth().modulateScrollX(shape(2,.01).scrollY(()=>time/10),0).mask(shape(2,.01).scrollY(()=>time/10)).add(o1).out(o1)
+synth().modulateScrollX(shape(2,.01).scrollY(()=>time/10),0).mask(shape(2,.01).scrollY(()=>time/10)).diff(src(o2).scale(.99).diff(src(o2).scale(1.01))).out(o2)
+      }
+      
+      function scanner2() {
+s0.initCam()
+synth=()=>src(s0).invert(0)
+solid().add(src(o1).sub(o2)).invert(1).out()
+synth().modulateScrollX(shape(2,.01).scrollY(()=>time/10),0).mask(shape(2,.01).scrollY(()=>time/10)).add(o1).out(o1)
+synth().modulateScrollX(shape(2,.01).scrollY(()=>time/10),0).mask(shape(2,.01).scrollY(()=>time/10)).diff(src(o2).scale(.99).diff(src(o2).scale(1.01))).out(o2)
+      }
+
+      function scanner3() {
+s0.initCam()
+synth=()=>src(s0).invert(1)
+solid().add(src(o1).sub(o2)).invert(0).out()
+synth().modulateScrollX(shape(2,.01).scrollY(()=>time/10),0).mask(shape(2,.01).scrollY(()=>time/10)).add(o1).out(o1)
+synth().modulateScrollX(shape(2,.01).scrollY(()=>time/10),0).mask(shape(2,.01).scrollY(()=>time/10)).diff(src(o2).scale(.99).diff(src(o2).scale(1.01))).out(o2)
+      }
+      
+      function scanner4() {
+s0.initCam()
+synth=()=>src(s0).invert(1)
+solid().add(src(o1).sub(o2)).invert(1).out()
+synth().modulateScrollX(shape(2,.01).scrollY(()=>time/10),0).mask(shape(2,.01).scrollY(()=>time/10)).add(o1).out(o1)
+synth().modulateScrollX(shape(2,.01).scrollY(()=>time/10),0).mask(shape(2,.01).scrollY(()=>time/10)).diff(src(o2).scale(.99).diff(src(o2).scale(1.01))).out(o2)
+      }
+      function start() {
+      speed=1;
+      }
+      function stop() {
+      speed=0;
+      }
+      function reset() {
+      hush()
+      }
+    </script>
+      <font color="white">
+      <p>This is a web camera scanner made with hydra-synth that can be adjusted canvas size by entering text box (width/height), and downloadable the image in the canvas by right-clicking the mouse and saving it.</p>
+      <br>
+      <p>By Hirotoshi Uchida</p>
+      </font>
+</body>
+</html>
