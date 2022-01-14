@@ -130,7 +130,7 @@ synth().modulateScrollX(shape(2,.01).scrollY(()=>time/10),0).mask(shape(2,.01).s
       function custom() {
 var image = document.js.a.value;
 var video = document.js.b.value;
-var synth5 = document.js.synth1.value;
+synth5=()=>synth1
 var synth6 = document.js.synth2.value;
 var synth7 = document.js.synth3.value;
 var synth8 = document.js.synth4.value;
@@ -138,7 +138,7 @@ s0.initCam()
 s1.initImage(image)
 s2.initVideo(video)
 s3.initScreen()
-synth5.out()
+synth5().out()
 synth6.out(o1)
 synth7.out(o2)
 synth8.out(o3)
