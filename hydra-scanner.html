@@ -67,8 +67,6 @@ button {
     <button onclick="scanner2()"> scanner2 </button>
     <button onclick="scanner3()"> scanner3 </button>
     <button onclick="scanner4()"> scanner4 </button>
-    <button onclick="start()"> start </button>
-    <button onclick="stop()"> stop </button>
     <button onclick="reset()"> reset </button>
       <br>
       <canvas id="myCanvas" width="400px" height="400px"></canvas>
@@ -120,12 +118,6 @@ synth=()=>src(s0).invert(1)
 solid().add(src(o1).sub(o2)).invert(1).out()
 synth().modulateScrollX(shape(2,.01).scrollY(()=>time/10),0).mask(shape(2,.01).scrollY(()=>time/10)).add(o1).out(o1)
 synth().modulateScrollX(shape(2,.01).scrollY(()=>time/10),0).mask(shape(2,.01).scrollY(()=>time/10)).diff(src(o2).scale(.99).diff(src(o2).scale(1.01))).out(o2)
-      }
-      function start() {
-      speed=1;
-      }
-      function stop() {
-      speed=0;
       }
       function reset() {
       hush()
