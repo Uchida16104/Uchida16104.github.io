@@ -56,7 +56,9 @@ button {
     <h1>hydra scanner</h1>
     <form name="js">
         <font color="white">
-        width:<input type="text" name="width" value="">
+        frame rate:<input type="text" name="framerate" value="">
+	speed:<input type="text" name="speed" value="">
+	width:<input type="text" name="width" value="">
         height:<input type="text" name="height" value="">
         <input type="button" value="set" onclick="set()"><br>
         </font>
@@ -80,9 +82,13 @@ button {
         
       // create functions to use with buttons
       function set() {
+	  var fr = document.js.framerate.value;
+          var s = document.js.speed.value;
           var w = document.js.width.value;
           var h = document.js.height.value;
-          setResolution(w,h)
+          fps=fr
+	  speed=s
+	  setResolution(w,h)
       }
       function scanner1() {
 s0.initCam()
