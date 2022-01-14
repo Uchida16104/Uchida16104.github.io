@@ -70,6 +70,8 @@ button {
     <button onclick="reset()"> reset </button>
       <br>
       <canvas id="myCanvas" width="400px" height="400px"></canvas>
+      <button id="download_button">download</button>
+      <a id="download_link"></a>
     <script>
       // create a new hydra-synth instance
       var hydra = new Hydra({
@@ -123,6 +125,28 @@ synth().modulateScrollX(shape(2,.01).scrollY(()=>time/10),0).mask(shape(2,.01).s
       function reset() {
       hush()
       }
+	    
+    window.onload = function(){
+
+        var canvas = document.getElementById('myCanvas');
+        var downloadLink = document.getElementById('download_link');
+        var filename = 'hydra_scanner.jpeg';
+
+        var button = document.getElementById('download_button');
+        button.addEventListener('click', function(){
+
+            if (canvas.msToBlob) {
+                var blob = canvas.msToBlob();
+                window.navigator.msSaveBlob(blob, filename);
+            } else {
+                downloadLink.href = canvas.toDataURL('image/jpeg');
+                downloadLink.download = filename;
+                downloadLink.click();
+            }
+
+        });
+
+    };
     </script>
       <font color="white">
       <p>This is a web camera scanner made with hydra-synth that can be adjusted canvas size by entering text box (width/height), and downloadable the image in the canvas by right-clicking the mouse and saving it.</p>
