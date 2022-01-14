@@ -60,6 +60,12 @@ button {
 	speed:<input type="text" name="speed" value="">x<br>
 	width:<input type="text" name="width" value="">px<br>
         height:<input type="text" name="height" value="">px<br>
+	image:<input type="text" name="a" value=""><br>
+        video:<input type="text" name="b" value=""><br>
+	synth1:<input type="text" name="synth1" value=""><br>
+	synth2:<input type="text" name="synth2" value=""><br>
+	synth3:<input type="text" name="synth3" value=""><br>
+	synth4:<input type="text" name="synth4" value=""><br>
 	<input type="button" value="set" onclick="set()"><br>
         </font>
     </form>
@@ -119,6 +125,24 @@ solid().add(src(o1).sub(o2)).invert(1).out()
 synth().modulateScrollX(shape(2,.01).scrollY(()=>time/10),0).mask(shape(2,.01).scrollY(()=>time/10)).add(o1).out(o1)
 synth().modulateScrollX(shape(2,.01).scrollY(()=>time/10),0).mask(shape(2,.01).scrollY(()=>time/10)).diff(src(o2).scale(.99).diff(src(o2).scale(1.01))).out(o2)
       }
+	    
+      function custom() {
+var image = document.js.a.value;
+var video = document.js.b.value;
+var synth1 = document.js.synth1.value;
+var synth2 = document.js.synth2.value;
+var synth3 = document.js.synth3.value;
+var synth4 = document.js.synth4.value;
+s0.initCam()
+s1.initImage("image")
+s2.initVideo("video")
+s3.initScreen()
+synth1.out()
+synth2.out(o1)
+synth3.out(o2)
+synth4.out(o3)
+      }
+	    
       function reset() {
       hush()
       }
