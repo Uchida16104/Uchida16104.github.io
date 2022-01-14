@@ -128,18 +128,18 @@ synth().modulateScrollX(shape(2,.01).scrollY(()=>time/10),0).mask(shape(2,.01).s
 	    
     window.onload = function(){
 
-        var canvas = document.getElementById('myCanvas');
+        var hc = document.getElementById('myCanvas');
         var downloadLink = document.getElementById('download_link');
         var filename = 'hydra_scanner.png';
 
         var button = document.getElementById('download_button');
         button.addEventListener('click', function(){
 
-            if (canvas.msToBlob) {
-                var blob = canvas.msToBlob();
+            if (hc.msToBlob) {
+                var blob = hc.msToBlob();
                 window.navigator.msSaveBlob(blob, filename);
             } else {
-                downloadLink.href = canvas.toDataURL('image/png');
+                downloadLink.href = hc.toDataURL('image/png');
                 downloadLink.download = filename;
                 downloadLink.click();
             }
