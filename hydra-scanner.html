@@ -60,8 +60,8 @@ button {
 	speed:<input type="text" name="speed" value="">x<br>
 	width:<input type="text" name="width" value="">px<br>
         height:<input type="text" name="height" value="">px<br>
-	image:<input type="text" name="a" value=""><br>
-        video:<input type="text" name="b" value=""><br>
+	image:<input type="url" name="a" value=""><br>
+        video:<input type="url" name="b" value=""><br>
 	synth1:<input type="text" name="synth1" value=""><br>
 	synth2:<input type="text" name="synth2" value=""><br>
 	synth3:<input type="text" name="synth3" value=""><br>
@@ -130,7 +130,7 @@ synth().modulateScrollX(shape(2,.01).scrollY(()=>time/10),0).mask(shape(2,.01).s
       function custom() {
 var image = document.js.a.value;
 var video = document.js.b.value;
-synth5=()=>synth1
+var synth5 = document.js.synth1.value;
 var synth6 = document.js.synth2.value;
 var synth7 = document.js.synth3.value;
 var synth8 = document.js.synth4.value;
