@@ -7,10 +7,6 @@
         <script src="https://unpkg.com/hydra-synth"></script>
           <canvas id="myCanvas"></canvas>
     <style type="text/css">
-    html {
-    touch-action: manipulation;
-    -webkit-touch-callout: none;
-}
 #main {
     position: sticky;
     top: 0px;
@@ -37,9 +33,9 @@ button {
     font-size: 15px;
     margin-top: 20px;
 }
-body {
+body,html {
   font-family: helvetica, arial, sans-serif;
-  margin: 2em;
+  margin: 10px;
   background: radial-gradient(black,darkgreen,black,darkblue);
   background-size: 200% 200%;
   animation: scale 60s ease infinite;
