@@ -108,7 +108,7 @@ a:hover {
         });
       }
       s0.initImage("./hanya.jpeg")
-      solid().layer(src(s0).luma()).layer(osc().modulate(noise(Math.PI/2*3)).luma()).color(1,0,0).out();
+      solid().layer(src(s0).luma()).add(gradient(1).color(1,0,0)).out();
         </script>
     <script>
     'use strict';
