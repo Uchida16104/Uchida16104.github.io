@@ -107,7 +107,8 @@ a:hover {
           canvas: document.getElementById("myCanvas")
         });
       }
-      solid().colorama([0,1].smooth().fast(1/10)).out();
+      s0.initImage("./hanya.jpeg")
+      solid().layer(src(s0).luma()).layer(osc().modulate(noise(Math.PI/2*3)).luma()).out();
         </script>
     <script>
     'use strict';
