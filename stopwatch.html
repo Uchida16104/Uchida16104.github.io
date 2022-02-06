@@ -37,6 +37,7 @@ body,html {
   font-family: helvetica, arial, sans-serif;
   margin: 10px;
   background: radial-gradient(black,darkgreen,black,darkblue);
+  color: green;
   background-size: 200% 200%;
   animation: scale 60s ease infinite;
 }
@@ -73,7 +74,6 @@ a:hover {
 }
 .container {
   padding: 1em;
-  /* add a bit of color to make legible */
   background-color: rgba(255, 255, 255, 0.75);
   position: relative;
   max-width: 700px;
@@ -97,7 +97,6 @@ a:hover {
         })(navigator.userAgent || navigator.vendor || window.opera);
         return check;
       };
-      // create a new hydra-synth instance
       if (mobileCheck() == false) {
         var hydra = new Hydra({
           canvas: document.getElementById("myCanvas")
