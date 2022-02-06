@@ -108,7 +108,8 @@ a:hover {
         });
       }
       s0.initImage("./hanya.jpeg")
-      solid().layer(src(s0).luma()).add(gradient(1).color(1,0,0)).out();
+      solid().layer(src(s0).luma()).add(o1).out();
+      gradient(1).modulateScale(noise(),Math.PI/10).modulateRotate(osc(),Math.PI/15).modulate(src(o1).colorama(1).thresh()).luma().diff(src(o1).scale(.99).diff(src(o1).scale(1.01))).color(1,0,0).out(o1);
         </script>
     <script>
     'use strict';
