@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset="UTF-8" />
+<script src="http://code.jquery.com/jquery.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>To Do List</title>
+<style type = "text/css">
+body {
+  font-family: helvetica, arial, sans-serif;
+  margin: 2em;
+}
+h1 {
+  color: #373fff;
+}
+a {
+  color: inherit;
+}
+a:hover {
+  background-color: plum
+}
+.container {
+  padding: 1em;
+  background: white;
+  opacity: 0.9375;
+  position: relative;
+  max-width: 700px;
+  width: 100%;
+  margin: auto;
+}
+</style>
+<canvas width="100" height="80" style="width: 100px; height: 80px; position: absolute; right: 0px; bottom: 0px;">
+</canvas>
+<div style="position:fixed; right:2px; top:2px; z-index:9999999999; -webkit-user-select: none; cursor:pointer;">
+</div>
+<div style="position:fixed; right:2px; bottom:2px; z-index:9999999999; -webkit-user-select: none; cursor:pointer;">
+</div>
+<style type = "text/css">
+body, html {
+  font-family: helvetica, arial, sans-serif;
+  margin: 10px;
+}
+h1 {
+  font-style: italic;
+  color: #ff0066;
+}
+button {
+  display: inline-block;
+  font-size: 12px;
+  padding: 7.5px;
+  margin: 7.5px;
+}
+</style>
+<body class="container" id="bg">
+<div data-v-7e2550d6="" class="odm_extension image_downloader_wrapper"></div>
+<header class="header">
+<div class="container" id="spacerSize">
+<div id="dispArea" class="container">
+<h1 class="title" style="text-align:left;">
+<div style="color:black;font-weight:bold;text-align:left;">
+To do list
+<style type = "text/css">
+div.right {
+    text-align: right; 
+}
+</style>
+<div style="text-align:left;float:right;">
+<font size = "2.5" color="black" face = "Georgia">
+For 
+<script>
+name = window.prompt("Please enter your name.", "");
+document.write(name);
+</script>
+<br>
+<a href="./todolist_japanese_ver1-4.html">Japanese page</a>
+<br>
+<font size="0.125">Change sizes of title font and line spaces</font>
+<br>
+<button onclick = "changeSpacerSizeSmall()">Small</button>
+<button onclick = "changeSpacerSizeMidium()">Midium</button>
+<button onclick = "changeSpacerSizeLarge()">Large</button>
+</font>
+</div>
+<br>
+<font size = "2.5" color="black" face = "Georgia"><div class="right"></div></font>
+<br>
+<style type = "text/css">
+.ex1{
+line-height:0.25;
+}
+.ex2{
+line-height:1;
+}
+.ex3{
+line-height:0.75;
+}
+.ex4{
+line-height:1.25;
+}
+</style>
+<p id="spacerSize"><font size="2" face="Georgia" color="indigo">Tasks</font></p>
+  <button id="add">Add/Register</button>
+  <button id="reset">Reset</button>
+  <ul id="todolist"></ul>
+  <script>
+  var initData  = ["Detail1", "Detail2"];
+  var listString = "";
+
+  function initialize(){
+    $.each(initData, function(key, value) {
+      $("#todolist").prepend('<li><input type = "text" name ="tasks" style="width:300px;height:50px;font-size:14px;"  placeholder="Please enter up to 38 characters here." /><input type = "checkbox" /><button class="delete">Delete</button></li>');
+    });
+  }
+
+  if (localStorage.getItem("todolist")) {
+    $("#todolist").html(localStorage.getItem("todolist"));
+  } else {
+    initialize();
+  }
+
+  $("#add").click(function() {
+    $("#todolist").prepend('<li><input type = "text" name ="tasks" style="width:300px;height:50px;font-size:14px;"  placeholder="Please enter up to 38 characters here." /><input type = "checkbox" /><button class="delete">Delete</button></li>');
+    localStorage.setItem("todolist", $("#todolist").html());
+  });
+
+  $("#todolist").on("keyup", ":input", function(){
+    $.each($("input"), function(key, input){
+      $(input).attr("value", $("<div/>").text(input.value).html());
+    });
+    localStorage.setItem("todolist", $("#todolist").html());
+  });
+
+  $("#todolist").on("click", ".delete", function() {
+    $(this).parent().remove();
+    localStorage.setItem("todolist", $("#todolist").html());
+  });
+
+  $("#reset").click(function(){
+    $("#todolist").empty();
+    initialize();
+    localStorage.setItem("todolist", $("#todolist").html());
+  });
+function changeBackgroundColor() {
+var cbc = document.getElementById("bg");
+var shift=window.prompt("Please enter background color");
+cbc.style.background = shift;
+}
+function changeSpacerSizeSmall() {
+var cfss = document.getElementById("spacerSize");
+cfss.style.fontSize = '5px';
+}
+function changeSpacerSizeMidium() {
+var cfsm = document.getElementById("spacerSize");
+cfsm.style.fontSize = '10px';
+}
+function changeSpacerSizeLarge() {
+var cfsl = document.getElementById("spacerSize");
+cfsl.style.fontSize = '15px';
+}
+</script>
+<br>
+<b><hr noshade></b>
+<p class = "ex1" id="spacerSize"><font size="1.5" face="Georgia" color="navy"><div onclick="obj=document.getElementById('open').style; obj.display=(obj.display=='none')?'block':'none';">
+<a style="cursor:pointer;">How to use ( <- Please click here.)</a></div></font></p>
+<br>
+<div id="open" style="display:none;clear:both;">
+<p class = "ex4" id="spacerSize"><font size="1.5" face="Georgia" color="navy">1. The "Add/Register" button combines the "Register" and "Add" buttons in one, and entering text into the input box will automatically save it, clicking on the "Add/Register" button will add an empty input box. 
+<br>
+<p class = "ex4" id="spacerSize"><font size="1" face="Georgia" color="navy">* A maximum of 38 half-width alphanumeric lowercase characters entering can be displayed.</font></p>
+<br>
+<p class = "ex4" id="spacerSize"><font size="1" face="Georgia" color="navy">* The input box can be displayed as to do list.</font></p>
+<br>
+<p class = "ex4" id="spacerSize"><font size="1" face="Georgia" color="navy">* The "Reset" button under "Tasks" can be used to reset saved data.</font></p>
+<br>
+<p class = "ex4" id="spacerSize"><font size="1.5" face="Georgia" color="navy">2. The checkbox next to the task entry field can be used to temporarily mark and display the completed task if you have completed it and do not want to delete the data.</font></p>
+<br>
+<p class = "ex4" id="spacerSize"><font size="1" face="Georgia" color="navy">* Please note that the checkboxes will lose their checked data if you refresh the page or close the tab.</font></p>
+<br>
+<p class = "ex2" id="spacerSize"><font size="1.5" face="Georgia" color="navy">3. Click on the "Delete" button next to the checkbox to delete the task.</font></p>
+<br>
+<p class = "ex4" id="spacerSize"><font size="1.5" face="Georgia" color="navy">4. Click on the "Small", "Midium", and "Large" button under "Change sizes of title font and line spaces" to change sizes of title font and line spaces.</font></p>
+<br>
+<p class = "ex4" id="spacerSize"><font size="1.5" face="Georgia" color="navy">5. Click on the "Change background color" button to change the background color.</font></p>
+<p class = "ex1" id="spacerSize"><font size="1" face="Georgia" color="navy">(Ex1)  #ff0000</font></p>
+<p class = "ex1" id="spacerSize"><font size="1" face="Georgia" color="navy">(Ex2)  linear-gradient(yellowgreen,purple)</font></p>
+<p class = "ex1" id="spacerSize"><font size="1" face="Georgia" color="navy">(Ex3)  conic-gradient(#ffa500,#00ffff)</font></p>
+<p class = "ex1" id="spacerSize"><font size="1" face="Georgia" color="navy">(Ex4)  radial-gradient(yellow,green)</font></p>
+<p class = "ex4" id="spacerSize"><font size="1" face="Georgia" color="navy">(Ex5)  repeating-linear-gradient(#ff00ff,transparent 5px,#4b0082 10px)</font></p>
+<p class = "ex1" id="spacerSize"><font size="1" face="Georgia" color="navy">etc...</font></p>
+<br>
+</div>
+<hr>
+<p id="spacerSize"><font size="1" face="Georgia" color="maroon">Current time</font></p>
+<p class = "ex3" id="spacerSize"><font size="0.125" face="Georgia" color="maroon">You can use it to keep track of the start and finish times of your tasks.</font></p>
+<strong style="text-align: right">
+<script>
+function currentTime() {
+dd = new Date();
+document.F1.T1.value = dd.toLocaleString();
+window.setTimeout("currentTime()", 1000);
+}
+</script>
+</strong>
+<style>
+body {
+background-color: rgba(255,0,0,0);
+text-align: left;
+}
+button:active {
+background : conic-gradient(pink,orange,yellowgreen,cyan);
+}
+input[type="text"] {
+border: 1px solid #000000;
+width: 100px;
+height: 50px;
+font-size : 20px;
+word-wrap:break-word;
+}
+input[type="text"] {
+border: 1px solid #000000;
+width: 200px;
+height: 100px;
+word-wrap:break-word;
+}
+</style>
+</head>
+<body onload="currentTime()">
+<form name="F1" action="#">
+<input type="text" name="T1" size=10 style="width:175px; height:25px;">
+</form>
+<form>
+<span style "color: #ff0000">
+<br>
+<br>
+</span>
+</form>
+</div>
+</h1>
+</div>
+<button onclick="changeBackgroundColor()"> Change background color </button>
+<br>
+</header>
+</body>
+</html>
