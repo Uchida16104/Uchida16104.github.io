@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset="Shift-JIS" />
+<meta http-equiv="Content-Type" content="text/html; charset="utf-8" />
 <script src="https://unpkg.com/jquery"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>To do ���X�g</title>
+<title>To do リスト</title>
 <style type = "text/css">
 body {
   font-family: helvetica, arial, sans-serif;
@@ -59,31 +59,31 @@ button {
 <div id="dispArea" class="container">
 <h1 class="title" style="text-align:left;">
 <div style="color:black;font-weight:bold;text-align:left;">
-To do ���X�g
+To do リスト
 <style type = "text/css">
 div.right {
     text-align: right; 
 }
 </style>
 <div style="text-align:left;float:right;">
-<font size = "2.5" color="black" face = "MS ����">
+<font size = "2.5" color="black" face = "MS 明朝">
 <script>
-name = window.prompt("��������͂��Ă��������B", "");
+name = window.prompt("氏名を入力してください。", "");
 document.write(name);
 </script>
-�p
+用
 <br>
-<a href="./todolist_english.html">�p��y�[�W</a>
+<a href="./todolist_english.html">英語ページ</a>
 <br>
-<font size="0.125">�s�Ԃƃ^�C�g���t�H���g�̃T�C�Y�ύX</font>
+<font size="0.125">行間とタイトルフォントのサイズ変更</font>
 <br>
-<button onclick = "changeSpacerSizeSmall()">��</button>
-<button onclick = "changeSpacerSizeMidium()">��</button>
-<button onclick = "changeSpacerSizeLarge()">��</button>
+<button onclick = "changeSpacerSizeSmall()">小</button>
+<button onclick = "changeSpacerSizeMidium()">中</button>
+<button onclick = "changeSpacerSizeLarge()">大</button>
 </font>
 </div>
 <br>
-<font size = "2.5" color="black" face = "MS ����"><div class="right"></div></font>
+<font size = "2.5" color="black" face = "MS 明朝"><div class="right"></div></font>
 <br>
 <style type = "text/css">
 .ex1{
@@ -99,9 +99,9 @@ line-height:0.75;
 line-height:1.25;
 }
 </style>
-<p id="spacerSize"><font size="2" face="MS ����" color="indigo">��邱��</font></p>
-  <button id="add">�ǉ��E�o�^</button>
-  <button id="reset">���Z�b�g</button>
+<p id="spacerSize"><font size="2" face="MS 明朝" color="indigo">やること</font></p>
+  <button id="add">追加・登録</button>
+  <button id="reset">リセット</button>
   <ul id="todolist"></ul>
   <script>
   var initData  = ["Detail1", "Detail2"];
@@ -109,7 +109,7 @@ line-height:1.25;
 
   function initialize(){
     $.each(initData, function(key, value) {
-      $("#todolist").prepend('<li><input type = "text" name ="tasks" style="width:300px;height:50px;font-size:14px;"  placeholder="�����ɔ��p38�����ȓ��œ��͂��Ă��������B" /><input type = "checkbox" /><button class="delete">�폜</button></li>');
+      $("#todolist").prepend('<li><input type = "text" name ="tasks" style="width:300px;height:50px;font-size:14px;"  placeholder="ここに半角38文字以内で入力してください。" /><input type = "checkbox" /><button class="delete">削除</button></li>');
     });
   }
 
@@ -120,7 +120,7 @@ line-height:1.25;
   }
 
   $("#add").click(function() {
-    $("#todolist").prepend('<li><input type = "text" name ="tasks" style="width:300px;height:50px;font-size:14px;"  placeholder="�����ɔ��p38�����ȓ��œ��͂��Ă��������B" /><input type = "checkbox" /><button class="delete">�폜</button></li>');
+    $("#todolist").prepend('<li><input type = "text" name ="tasks" style="width:300px;height:50px;font-size:14px;"  placeholder="ここに半角38文字以内で入力してください。" /><input type = "checkbox" /><button class="delete">削除</button></li>');
     localStorage.setItem("todolist", $("#todolist").html());
   });
 
@@ -143,7 +143,7 @@ line-height:1.25;
   });
 function changeBackgroundColor() {
 var cbc = document.getElementById("bg");
-var shift=window.prompt("�w�i�F����͂��Ă��������B");
+var shift=window.prompt("背景色を入力してください。");
 cbc.style.background = shift;
 }
 function changeSpacerSizeSmall() {
@@ -161,38 +161,38 @@ cfsl.style.fontSize = '15px';
 </script>
 <br>
 <b><hr noshade></b>
-<p class = "ex1" id="spacerSize"><font size="1.5" face="MS ����" color="navy"><div onclick="obj=document.getElementById('open').style; obj.display=(obj.display=='none')?'block':'none';">
-<a style="cursor:pointer;">�g�����i���������N���b�N���Ă��������B�j</a></div></font></p>
+<p class = "ex1" id="spacerSize"><font size="1.5" face="MS 明朝" color="navy"><div onclick="obj=document.getElementById('open').style; obj.display=(obj.display=='none')?'block':'none';">
+<a style="cursor:pointer;">使い方（←ここをクリックしてください。）</a></div></font></p>
 <br>
 <div id="open" style="display:none;clear:both;">
-<p class = "ex4" id="spacerSize"><font size="1.5" face="MS ����" color="navy">1. �u�ǉ��E�o�^�v�{�^���́u�o�^�v�{�^���Ɓu�ǉ��v�{�^����1�ɂ܂Ƃ߂����̂ŁA���̓{�b�N�X�Ƀe�L�X�g����͂��邱�ƂŎ����I�ɕۑ�����A�u�ǉ��E�o�^�v�{�^�����N���b�N���邱�ƂŁA��̓��̓{�b�N�X���ǉ�����܂��B
+<p class = "ex4" id="spacerSize"><font size="1.5" face="MS 明朝" color="navy">1. 「追加・登録」ボタンは「登録」ボタンと「追加」ボタンを1つにまとめたもので、入力ボックスにテキストを入力することで自動的に保存され、「追加・登録」ボタンをクリックすることで、空の入力ボックスが追加されます。
 <br>
-<p class = "ex4" id="spacerSize"><font size="1" face="MS ����" color="navy">�� ���̓{�b�N�X�͍ő�ŉp��������38�����̓��͂�\���\�ł��B</font></p>
+<p class = "ex4" id="spacerSize"><font size="1" face="MS 明朝" color="navy">※ 入力ボックスは最大で英数小文字38文字の入力を表示可能です。</font></p>
 <br>
-<p class = "ex4" id="spacerSize"><font size="1" face="MS ����" color="navy">�� ���̓{�b�N�X�͂�邱�ƃ��X�g�Ƃ��ĕ\������܂��B</font></p>
+<p class = "ex4" id="spacerSize"><font size="1" face="MS 明朝" color="navy">※ 入力ボックスはやることリストとして表示されます。</font></p>
 <br>
-<p class = "ex4" id="spacerSize"><font size="1" face="MS ����" color="navy">�� �u��邱�Ɓv�̉��ɂ���u���Z�b�g�v�{�^���͕ۑ����ꂽ�f�[�^�����Z�b�g���邱�Ƃ��o���܂��B</font></p>
+<p class = "ex4" id="spacerSize"><font size="1" face="MS 明朝" color="navy">※ 「やること」の下にある「リセット」ボタンは保存されたデータをリセットすることが出来ます。</font></p>
 <br>
-<p class = "ex4" id="spacerSize"><font size="1.5" face="MS ����" color="navy">2. �^�X�N���͗��ׂ̗ɂ���`�F�b�N�{�b�N�X�͊��������^�X�N���폜�����ɁA�����������Ƃ��ꎞ�I�ɕ\�����邽�߂ɂ��g�����������܂��B</font></p>
+<p class = "ex4" id="spacerSize"><font size="1.5" face="MS 明朝" color="navy">2. タスク入力欄の隣にあるチェックボックスは完了したタスクを削除せずに、完了したことを一時的に表示するためにお使いいただけます。</font></p>
 <br>
-<p class = "ex4" id="spacerSize"><font size="1" face="MS ����" color="navy">�� �y�[�W���X�V������A�^�u�����ƁA�`�F�b�N�{�b�N�X�Ƀ`�F�b�N�����f�[�^�������Ă��܂��̂ł����ӂ��������B</font></p>
+<p class = "ex4" id="spacerSize"><font size="1" face="MS 明朝" color="navy">※ ページを更新したり、タブを閉じると、チェックボックスにチェックしたデータが消えてしまうのでご注意ください。</font></p>
 <br>
-<p class = "ex2" id="spacerSize"><font size="1.5" face="MS ����" color="navy">3. �`�F�b�N�{�b�N�X�ׂ̗ɂ���u�폜�v�{�^�����N���b�N���邱�Ƃł�邱�Ƃ��폜�o���܂��B</font></p>
+<p class = "ex2" id="spacerSize"><font size="1.5" face="MS 明朝" color="navy">3. チェックボックスの隣にある「削除」ボタンをクリックすることでやることを削除出来ます。</font></p>
 <br>
-<p class = "ex4" id="spacerSize"><font size="1.5" face="MS ����" color="navy">4. �u�s�Ԃƃ^�C�g���t�H���g�̃T�C�Y�ύX�v�̉��ɂ���u���v�u���v�u��v�{�^�����N���b�N���邱�ƂŃ^�C�g���̃t�H���g�T�C�Y�ƍs�Ԃ̃T�C�Y��ύX���鎖���o���܂��B</font></p>
+<p class = "ex4" id="spacerSize"><font size="1.5" face="MS 明朝" color="navy">4. 「行間とタイトルフォントのサイズ変更」の下にある「小」「中」「大」ボタンをクリックすることでタイトルのフォントサイズと行間のサイズを変更する事が出来ます。</font></p>
 <br>
-<p class = "ex4" id="spacerSize"><font size="1.5" face="MS ����" color="navy">5. �u�w�i�F�̕ύX�v�{�^�����N���b�N���A���̓_�C�A���O�ɐF����͂��邱�ƂŔw�i�F��ύX���鎖���o���܂��B</font></p>
-<p class = "ex1" id="spacerSize"><font size="1" face="MS ����" color="navy">�i��1�j #ff0000</font></p>
-<p class = "ex1" id="spacerSize"><font size="1" face="MS ����" color="navy">�i��2�j linear-gradient(yellowgreen,purple)</font></p>
-<p class = "ex1" id="spacerSize"><font size="1" face="MS ����" color="navy">�i��3�j conic-gradient(#ffa500,#00ffff)</font></p>
-<p class = "ex1" id="spacerSize"><font size="1" face="MS ����" color="navy">�i��4�j radial-gradient(yellow,green)</font></p>
-<p class = "ex4" id="spacerSize"><font size="1" face="MS ����" color="navy">�i��5�j repeating-linear-gradient(#ff00ff,transparent 5px,#4b0082 10px)</font></p>
-<p class = "ex1" id="spacerSize"><font size="1" face="MS ����" color="navy">�Ȃ�...</font></p>
+<p class = "ex4" id="spacerSize"><font size="1.5" face="MS 明朝" color="navy">5. 「背景色の変更」ボタンをクリックし、入力ダイアログに色を入力することで背景色を変更する事が出来ます。</font></p>
+<p class = "ex1" id="spacerSize"><font size="1" face="MS 明朝" color="navy">（例1） #ff0000</font></p>
+<p class = "ex1" id="spacerSize"><font size="1" face="MS 明朝" color="navy">（例2） linear-gradient(yellowgreen,purple)</font></p>
+<p class = "ex1" id="spacerSize"><font size="1" face="MS 明朝" color="navy">（例3） conic-gradient(#ffa500,#00ffff)</font></p>
+<p class = "ex1" id="spacerSize"><font size="1" face="MS 明朝" color="navy">（例4） radial-gradient(yellow,green)</font></p>
+<p class = "ex4" id="spacerSize"><font size="1" face="MS 明朝" color="navy">（例5） repeating-linear-gradient(#ff00ff,transparent 5px,#4b0082 10px)</font></p>
+<p class = "ex1" id="spacerSize"><font size="1" face="MS 明朝" color="navy">など...</font></p>
 <br>
 </div>
 <hr>
-<p id="spacerSize"><font size="1" face="MS ����" color="maroon">���ݎ���</font></p>
-<p class = "ex3" id="spacerSize"><font size="0.125" face="MS ����" color="maroon">��鎖�̊J�n�����ƏI�������̊m�F�ɂ��g�����������܂��B</font></p>
+<p id="spacerSize"><font size="1" face="MS 明朝" color="maroon">現在時刻</font></p>
+<p class = "ex3" id="spacerSize"><font size="0.125" face="MS 明朝" color="maroon">やる事の開始時刻と終了時刻の確認にお使いいただけます。</font></p>
 <strong style="text-align: right">
 <script>
 function currentTime() {
@@ -238,7 +238,7 @@ word-wrap:break-word;
 </div>
 </h1>
 </div>
-<button onclick="changeBackgroundColor()"> �w�i�F�̕ύX </button>
+<button onclick="changeBackgroundColor()"> 背景色の変更 </button>
 <br>
 </header>
 </body>
