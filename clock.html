@@ -140,7 +140,7 @@ var hydra = new Hydra({
   canvas: document.getElementById("myCanvas")
 });
 }
-fps=15;
+fps=7.5;
 src(o1).modulateScrollX(osc(5).repeatY().modulateScrollY(osc().repeatX(),()=>(time/1000)),()=>(time/-1000)).diff(o1).out();
 shape([1,2].smooth().fast(1/10)).scale(.00001).colorama([0,1].smooth().fast(1/10)).diff(shape([1,2].smooth().fast(1/10)).scale(.00001).colorama([0,1].smooth().fast(1/10)).rotate(-.1,-.1).diff(shape([1,2].smooth().fast(1/10)).scale(.00001).colorama([0,1].smooth().fast(1/10)).diff(shape([1,2].smooth().fast(1/10)).scale(.00001).colorama([0,1].smooth().fast(1/10)).rotate(-.1,-.1).rotate(.1,.1)))).out(o1);
 src(o0).diff(src(o0).scale(-1,-1)).out(o2);
