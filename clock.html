@@ -140,11 +140,12 @@ var hydra = new Hydra({
   canvas: document.getElementById("myCanvas")
 });
 }
+fps=15;
 src(o1).modulateScrollX(osc(5).repeatY().modulateScrollY(osc().repeatX(),()=>(time/1000)),()=>(time/-1000)).diff(o1).out();
 shape([1,2].smooth().fast(1/10)).scale(.00001).colorama([0,1].smooth().fast(1/10)).diff(shape([1,2].smooth().fast(1/10)).scale(.00001).colorama([0,1].smooth().fast(1/10)).rotate(-.1,-.1).diff(shape([1,2].smooth().fast(1/10)).scale(.00001).colorama([0,1].smooth().fast(1/10)).diff(shape([1,2].smooth().fast(1/10)).scale(.00001).colorama([0,1].smooth().fast(1/10)).rotate(-.1,-.1).rotate(.1,.1)))).out(o1);
 src(o0).diff(src(o0).scale(-1,-1)).out(o2);
 osc(6,1/8,300).modulateScrollX(shape(1)).luma().posterize().modulateScale(shape(2).scale(1.5).scrollY(.2625).mult(osc()).add(shape(2).scale(1.5).scrollY(-.2625).mult(osc()).scrollX()).thresh()).posterize().add(o2).add(noise(Math.PI/2).mult(gradient(1)).pixelate(10,10).diff(voronoi(10,1/8,1.75).mult(solid([0,1].smooth().fast(1/8),[0,1].smooth().fast(1/4),[0,1].smooth().fast(1/2),[0,1].smooth())).pixelate().luma()),.9).out(o3);
-render(o3)
+render(o3);
 const clock = () => {
   const d = new Date();
   let year = d.getFullYear();
