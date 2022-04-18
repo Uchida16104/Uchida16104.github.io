@@ -63,8 +63,8 @@ a{
 <script type="text/python">
 from browser import document, html
 ##Please write Python code!##
-name="Python"
-print("Hello "+name+"!") 
+letter=input()
+print(letter) 
 </script>
 <script type="text/javascript">
 Opal.load("opal-parser");
@@ -72,13 +72,12 @@ Opal.load("opal-parser");
 <script type="text/ruby">
 require 'native'
 ##Please write Ruby code!##
-name = "Ruby"
-$$.puts("Hello #{name}!")
+code = $$.gets("Ruby")
+$$.puts("#{code}")
 </script>
 <script type="text/javascript">
 //Please write Javascript code!
-var name = "JavaScript"
-console.log("Hello "+name+"!")
+window.prompt("JavaScript");
 </script>
 <script>
 window.onload = function(){
