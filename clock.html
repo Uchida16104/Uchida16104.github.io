@@ -135,6 +135,25 @@ console.log("Hello "+name+"!")
   greetings = "Hello, VBScript!!"
   MsgBox greetings
 </script>
+<script type="text/javascript">
+;(function() {
+  var pkg = {};
+  pkg["../.."] = (function() {
+    function main () {
+      console.log("Hello, Go!")
+    };
+    return {
+      main: main
+    };
+  })();
+  return pkg["../.."].main();
+})()
+</script>
+<script src="https://raw.githubusercontent.com/fengari-lua/fengari-web/master/src/fengari-web.js" type="text/javascript"></script>
+<script type="application/lua">
+local js = require "js"
+local window = js.global
+print("Hello, Lua!")
 <script>
 window.onload = function(){
 var el = document.getElementById("start-up");
@@ -146,7 +165,7 @@ el.play();
 </audio>
 <div class="container">
 <div class="clock">
-<p>Please save source code of this page and enjoy to remix your JavaScript, Ruby, and Python Code!!</p>
+<p>Please save source code of this page and enjoy to remix your JavaScript, Ruby, Python, Go, Lua, and VBScript Code!!</p>
 <p>Then, you can view the result on console.</p>
 <br>
 <p class="clock-date"></p>
