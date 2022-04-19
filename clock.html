@@ -150,10 +150,8 @@ console.log("Hello "+name+"!")
 })()
 </script>
 <script src="https://raw.githubusercontent.com/fengari-lua/fengari-web/master/src/fengari-web.js" type="text/javascript"></script>
-<script type="application/lua">
-local js = require "js"
-local window = js.global
-print("Hello, Lua!")
+<script type="text/javascript">
+console.log(fengari.load("print("Hello, Lua!")")())
 </script>
 <script>
 window.onload = function(){
