@@ -36,26 +36,28 @@ setInterval(clock, 1000);
 <script src='https://github.com/fengari-lua/fengari-web/releases/download/v0.1.4/fengari-web.js'></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.js"></script>
 <script type="text/javascript">
-console.log("Hello, JavaScript!")
+window.alert("Hello, JavaScript!")
 </script>
 <script type="text/javascript">
 Opal.load("opal-parser");
 </script>
 <script type="text/ruby">
+require 'opal'
 require 'native'
-$$.puts("Hello, Ruby!")
+print "Hello, Ruby!"
 </script>
 <script language="text/vbscript">
-  Dim greetings
-  greetings = "Hello, VBScript!!"
-  WScript.Echo(greetings)
+  Function VBS()
+  Msgbox("Hello, VBScript!!")
+  End Function
+  VBS()
 </script>
 <script type="text/javascript">
 ;(function() {
   var pkg = {};
   pkg["../.."] = (function() {
     function main () {
-      console.log("Hello, Go!")
+      window.alert("Hello, Go!")
     };
     return {
       main: main
@@ -65,7 +67,10 @@ $$.puts("Hello, Ruby!")
 })()
 </script>
 <script type="application/lua">
-print("Hello, Lua!")
+local js = require "js"
+local window = js.global
+
+window:alert("Hello, Lua!")
 </script>
 <title>PICO CLOCK</title>
 <style type="text/css">
@@ -75,6 +80,104 @@ body {
   height: 100vh;
   background-color: black;
   background-size: cover;
+}
+/* From uiverse.io by @menezes11 */
+button {
+ position: relative;
+ padding: 1em 1.8em;
+ outline: none;
+ border: 1px solid #303030;
+ background: transparent;
+ color: white;
+ text-transform: uppercase;
+ letter-spacing: 2px;
+ font-size: 15px;
+ overflow: hidden;
+ transition: 0.2s;
+ border-radius: 0px;
+ cursor: pointer;
+ font-family: 'Press Start 2P',monospace;
+ font-weight: bold;
+}
+
+button:hover {
+ box-shadow: 0 0 10px black, 0 0 25px white, 0 0 50px black;
+ transition-delay: 0.6s;
+}
+
+button span {
+ position: absolute;
+}
+
+button span:nth-child(1) {
+ top: 0;
+ left: -100%;
+ width: 100%;
+ height: 2px;
+ background: linear-gradient(90deg, black,white);
+}
+
+button:hover span:nth-child(1) {
+ left: 100%;
+ transition: 0.7s;
+}
+
+button span:nth-child(3) {
+ bottom: 0;
+ right: -100%;
+ width: 100%;
+ height: 2px;
+ background: linear-gradient(90deg, white,black);
+}
+
+button:hover span:nth-child(3) {
+ right: 100%;
+ transition: 0.7s;
+ transition-delay: 0.35s;
+}
+
+button span:nth-child(2) {
+ top: -100%;
+ right: 0;
+ width: 2px;
+ height: 100%;
+ background: linear-gradient(180deg, black,white);
+}
+
+button:hover span:nth-child(2) {
+ top: 100%;
+ transition: 0.7s;
+ transition-delay: 0.17s;
+}
+
+button span:nth-child(4) {
+ bottom: -100%;
+ left: 0;
+ width: 2px;
+ height: 100%;
+ background: linear-gradient(360deg, white,black);
+}
+
+button:hover span:nth-child(4) {
+ bottom: 100%;
+ transition: 0.7s;
+ transition-delay: 0.52s;
+}
+
+button:active {
+ background: #ae00af;
+ background: linear-gradient(to top right, black,white);
+ color: #bfbfbf;
+ box-shadow: 0 0 8px white, 0 0 8px black, 0 0 8px white;
+ transition: 0.1s;
+}
+
+button:active span:nth-child(1) 
+span:nth-child(2) 
+span:nth-child(2) 
+span:nth-child(2) {
+ transition: none;
+ transition-delay: none;
 }
 .container {
   width: 100%;
@@ -122,8 +225,8 @@ a{
 </head>
 <body onload="brython()">
 <script type="text/python">
-from browser import document, html
-print("Hello, Python!")
+from browser import document, alert
+alert("Hello, Python!")
 </script>
 </body>
 <body>
