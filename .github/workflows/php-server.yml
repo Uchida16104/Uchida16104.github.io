@@ -23,8 +23,7 @@ jobs:
 
       - name: Run server
         run:
-	  php -S localhost:8000 &
-          sleep 5
+	  php -S localhost:8000
 
       - name: Access server
         run: curl http://localhost:8 >> $GITHUB_STEP_SUMMARY
