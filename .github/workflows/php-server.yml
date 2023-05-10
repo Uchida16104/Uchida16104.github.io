@@ -22,7 +22,7 @@ jobs:
           php-version: ${{ matrix.php-versions }}
 
       - name: Run server
-        run: |
+        run:
 	  php -S localhost:8000 &
           sleep 5
 
