@@ -58,7 +58,6 @@ Opal.load("opal-parser");
 require 'opal'
 require 'native'
 print "Hello, Ruby!"
-ruby -run -e httpd . -p 8080 &
 </script>
 <script language="text/vbscript">
 msgbox "Hello, VBScript!!"
@@ -286,21 +285,6 @@ shape(99).diff(shape(99).scale(.99)).mult(osc().kaleid(99)).add(shape(2,.01).mul
     function pixelatedTimer(){
         shape(99).diff(shape(99).scale(.99)).mult(osc().kaleid(99)).add(shape(2,.01).mult(osc().rotate(Math.PI/2)).rotate(Math.PI/2).layer(shape(2,.01).mult(osc(1).thresh().rotate(Math.PI/2)).mult(shape(1).scale(.1)).rotate(Math.PI/2).luma().mult(shape(1).scale(.1))).rotate(-Math.PI*2).scale(-1).mult(shape(99))).rotate(.1,.1).scale(3).contrast(1.01).mult(shape(4,0,1).repeat(50,50)).diff(src(o0).scale(.99).diff(src(o0).scale(1.01))).diff(src(o0).pixelate(50,50)).out()
     }
-const http = require("http");
-const port = 8800;
-
-const server = http.createServer((request, response) => {
-    response.writeHead(200, {
-      "Content-Type": "text/html"
-    });
-
-    const responseMessage = "<body><h1>NodeJs Server</h1><h2>Connection Successed!!</h2><p>Generated Number:</p><script>document.write(Math.floor(Math.random()*10000));</script></body>";
-    response.end(responseMessage);
-    console.log(`Sent a response : ${responseMessage}`);
-});
-
-server.listen(port);
-console.log(`The server has started and is listening on port number: ${port}`);
 </script>
 </div>
 </div>
